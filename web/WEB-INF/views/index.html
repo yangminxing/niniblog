@@ -8,22 +8,64 @@
 	<link href="../../static-resource/css/bootstrap.min.css" rel="stylesheet">
 	<link href="../../static-resource/css/font-awesome.css" rel="stylesheet">
 
+
 	<style>
+		/* springmvc theme source 改 */
 		/* 自适应屏幕 大于1000px时 */
 		@media (min-width:1000px)
 		{
-			.nb_left_container
+			.nb_left
+			{
+				width: 200px;;
+			}
+
+			.nb_left_container_desktop
 			{
 				display: block;
+			}
+
+			.nb_left_container_mobile
+			{
+				display: none;
+			}
+
+			.nb_right
+			{
+				left: 200px;
+			}
+
+			.nb_right .navbar-fixed-top
+			{
+				left:200px;
 			}
 		}
 
 		/* 自适应屏幕 小于1000px时 */
 		@media (max-width:1000px)
 		{
-			.nb_left_container
+			.nb_left
+			{
+				width: 40px;;
+			}
+
+			.nb_left_container_desktop
 			{
 				display: none;
+			}
+
+			.nb_left_container_mobile
+			{
+				display: block;
+			}
+
+			.nb_right
+			{
+				left: 40px;
+			}
+
+			.nb_right .navbar-fixed-top
+			{
+				left:40px;
 			}
 		}
 
@@ -36,6 +78,7 @@
 			left:0px;
 			right:0px;
 			height: 100%;
+
 			z-index: 1000;
 			background-image: url("../../static-resource/images/star.jpg");
 		}
@@ -43,7 +86,7 @@
 
 		.nb_left .nb_left_image
 		{
-			margin-top: 100%;
+
 		}
 
 		.nb_left .nb_left_title
@@ -52,6 +95,14 @@
 
 			color:honeydew;
 			font-family: 微软雅黑;
+
+
+		}
+
+		.nb_left .nb_left_enablehidden {
+			height: 150px;
+
+			cursor: pointer;
 		}
 
 		.nb_content{
@@ -81,8 +132,16 @@
 
 <body>
 	<!-- 左侧开始 -->
-	<div class="col-xs-2 nb_left">
-		<div class="container-fluid nb_left_container">
+	<div class="nb_left">
+
+		<!-- 桌面版左侧栏 -->
+		<div class="container-fluid nb_left_container_desktop">
+
+			<!-- 隐藏左侧栏 触发区域 -->
+			<div class="row nb_left_enablehidden">
+				<div class="col-md-12">
+				</div>
+			</div>
 			<!-- 图片行 -->
 			<div class="row nb_left_image ">
 				<div class="col-md-12 innercenter ">
@@ -96,7 +155,6 @@
 					Yangminxing
 				</div>
 			</div>
-
 			<!-- 图标控制行 -->
 			<div class="row">
 				<div class="col-md-12 nb_left_title innercenter">
@@ -105,13 +163,28 @@
 				</div>
 			</div>
 		</div>
+
+		<!-- 移动版左侧栏 -->
+		<div class="container-fluid nb_left_container_mobile">
+			<!-- 图标控制行 -->
+			<div class="row">
+				<div class="col-md-12 nb_left_title innercenter">
+					<i class="fa fa-envelope-o"></i>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12 nb_left_title innercenter">
+					<i class="fa fa-gear"></i>
+				</div>
+			</div>
+		</div>
 	</div>
 	<!-- 左侧结束 -->
 	<!-- 右侧开始 -->
-	<div class="col-xs-10 nb_right col-xs-offset-2">
+	<div class="col-xs-10 nb_right">
 			<!-- 导航开始 -->
 			<div class="row ">
-				<nav class="navbar navbar-default col-xs-offset-2 navbar-fixed-top" role="navigation">
+				<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
 					<!-- 导航栏左侧 开始 -->
 					<div class="navbar-header">
 						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -220,8 +293,8 @@
 					</div>
 
 					<!-- 分页开始 -->
-					<div class="row">
-						<div class="col-md-12 column">
+					<div class="row text-right">
+						<div class="col-md-11 column">
 							<ul class="pagination">
 								<li>
 									 <a href="#">Prev</a>
@@ -256,5 +329,9 @@
 	<!-- 右侧结束 -->
 <script src="../../static-resource/js/jquery.min.js"></script>
 <script src="../../static-resource/js/bootstrap.min.js"></script>
+
+<script type="text/javascript">
+
+</script>
 </body>
 </html>
