@@ -1,0 +1,147 @@
+body {
+	text-align: center; color: rgb(136, 136, 136); line-height: 30px; font-family: "Roboto", sans-serif; font-size: 16px; font-weight: 300;
+}
+strong {
+	font-weight: 500;
+}
+a {
+	transition:0.3s; color: rgb(222, 97, 94); text-decoration: none; -webkit-transition: all .3s; -o-transition: all .3s; -moz-transition: all .3s;
+}
+a:hover {
+	transition:0.3s; color: rgb(222, 97, 94); text-decoration: none; -webkit-transition: all .3s; -o-transition: all .3s; -moz-transition: all .3s;
+}
+a:focus {
+	transition:0.3s; color: rgb(222, 97, 94); text-decoration: none; -webkit-transition: all .3s; -o-transition: all .3s; -moz-transition: all .3s;
+}
+h1 {
+	color: rgb(85, 85, 85); line-height: 50px; font-size: 38px; font-weight: 100; margin-top: 10px;
+}
+h2 {
+	color: rgb(85, 85, 85); line-height: 50px; font-size: 38px; font-weight: 100; margin-top: 10px;
+}
+h3 {
+	color: rgb(85, 85, 85); line-height: 30px; font-size: 22px; font-weight: 300;
+}
+img {
+	max-width: 100%;
+}
+::selection {
+	background: rgb(222, 97, 94); color: rgb(255, 255, 255); text-shadow: none;
+}
+.btn-link-1 {
+	background: rgb(222, 97, 94); margin: 5px; padding: 16px 20px 0px; border-radius: 4px; height: 50px; color: rgb(255, 255, 255); line-height: 16px; font-size: 16px; font-weight: 300; display: inline-block; -moz-border-radius: 4px; -webkit-border-radius: 4px;
+}
+.btn-link-1:hover {
+	outline: 0px; color: rgb(255, 255, 255); opacity: 0.6;
+}
+.btn-link-1:focus {
+	outline: 0px; color: rgb(255, 255, 255); opacity: 0.6;
+}
+.btn-link-1:active {
+	outline: 0px; color: rgb(255, 255, 255); opacity: 0.6;
+}
+.btn-link-1-facebook.btn-link-1 {
+	background: rgb(72, 98, 163);
+}
+.btn-link-1-twitter.btn-link-1 {
+	background: rgb(85, 172, 238);
+}
+.btn-link-1-google-plus.btn-link-1 {
+	background: rgb(221, 75, 57);
+}
+.btn-link-1 i {
+	line-height: 20px; padding-right: 5px; font-size: 20px; vertical-align: middle;
+}
+.btn-link-2 {
+	background: rgba(0, 0, 0, 0.3); margin: 5px; padding: 15px 20px 0px; border-radius: 4px; border: 1px solid rgb(255, 255, 255); border-image: none; height: 50px; color: rgb(255, 255, 255); line-height: 16px; font-size: 16px; font-weight: 300; display: inline-block; -moz-border-radius: 4px; -webkit-border-radius: 4px;
+}
+.btn-link-2:hover {
+	background: rgba(0, 0, 0, 0.3); outline: 0px; color: rgb(255, 255, 255); opacity: 0.6;
+}
+.btn-link-2:focus {
+	background: rgba(0, 0, 0, 0.3); outline: 0px; color: rgb(255, 255, 255); opacity: 0.6;
+}
+.btn-link-2:active {
+	background: rgba(0, 0, 0, 0.3); outline: 0px; color: rgb(255, 255, 255); opacity: 0.6;
+}
+.btn-link-2:focus:active {
+	background: rgba(0, 0, 0, 0.3); outline: 0px; color: rgb(255, 255, 255); opacity: 0.6;
+}
+.inner-bg {
+	padding: 50px 0px 170px;
+}
+.top-content .text {
+	color: rgb(255, 255, 255);
+}
+.top-content .text h1 {
+	color: rgb(255, 255, 255);
+}
+.top-content .description {
+	margin: 20px 0px 10px;
+}
+.top-content .description p {
+	opacity: 0.8;
+}
+.top-content .description a {
+	color: rgb(255, 255, 255);
+}
+.top-content .description a:hover {
+	border-bottom-color: rgb(255, 255, 255); border-bottom-width: 1px; border-bottom-style: dotted;
+}
+.top-content .description a:focus {
+	border-bottom-color: rgb(255, 255, 255); border-bottom-width: 1px; border-bottom-style: dotted;
+}
+.form-box {
+	margin-top: 35px;
+}
+.form-top {
+	background: rgba(0, 0, 0, 0.35); padding: 0px 25px 15px; border-radius: 4px 4px 0px 0px; text-align: left; overflow: hidden; -moz-border-radius: 4px 4px 0 0; -webkit-border-radius: 4px 4px 0 0;
+}
+.form-top-left {
+	width: 75%; padding-top: 25px; float: left;
+}
+.form-top-left h3 {
+	color: rgb(255, 255, 255); margin-top: 0px;
+}
+.form-top-left p {
+	color: rgb(255, 255, 255); opacity: 0.8;
+}
+.btn {
+	width: 25%; text-align: right; color: rgb(255, 255, 255); line-height: 100px; padding-top: 5px; font-size: 66px; float: left; opacity: 0.3;
+}
+.form-bottom {
+	background: rgba(0, 0, 0, 0.3); padding: 25px 25px 30px; border-radius: 0px 0px 4px 4px; text-align: left; -moz-border-radius: 0 0 4px 4px; -webkit-border-radius: 0 0 4px 4px;
+}
+.form-bottom form textarea {
+	height: 100px;
+}
+.form-bottom form button.btn {
+	width: 100%;
+}
+.form-bottom form .input-error {
+	border-color: rgb(222, 97, 94);
+}
+.social-login {
+	margin-top: 35px;
+}
+.social-login h3 {
+	color: rgb(255, 255, 255);
+}
+.social-login-buttons {
+	margin-top: 25px;
+}
+@media all and (max-width:767px)
+{
+.inner-bg {
+	padding: 60px 0px 110px;
+}
+}
+@media all and (max-width:415px)
+{
+h1 {
+	font-size: 32px;
+}
+h2 {
+	font-size: 32px;
+}
+}

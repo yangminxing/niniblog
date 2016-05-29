@@ -8,7 +8,6 @@
 	<link href="../../static-resource/css/bootstrap.min.css" rel="stylesheet">
 	<link href="../../static-resource/css/font-awesome.css" rel="stylesheet">
 
-
 	<style>
 		/* springmvc theme source 改 */
 		/* 自适应屏幕 大于1000px时 */
@@ -121,9 +120,22 @@
 			margin-left: auto;
 			margin-right: auto;
 		}
-
-
-
+		.form-top-left {
+			width: 75%; padding-top: 25px; float: left;
+		}
+		.form-top-left h3 {
+		    margin-top: 0px;
+		}
+		.form-top-left p {
+			opacity: 0.8;
+		}
+		.form-top-right {
+			width: 25%; text-align: right; line-height: 100px; padding-top: 5px; font-size: 66px; float: left;
+		}
+		.sbbtn
+		{
+			width: 100%;;
+		}
 
 	</style>
 	
@@ -208,10 +220,10 @@
 							</form>
 							<ul class="nav navbar-nav navbar-left" >
 								<li>
-									  <a href="#">Log in</a>
+									  <a href="#" data-toggle="modal" data-target=".login">Log in</a>
 								</li>
 								<li>
-									<a href="#">Sign in</a>
+									<a href="#">Sign up</a>
 								</li>
 								<li>
 									<a href="#"></a>
@@ -324,9 +336,67 @@
 				</div>
 			</div>
 			<!-- 内容主体结束 -->
-
     </div>
 	<!-- 右侧结束 -->
+
+	<!-- 登陆窗体 开始 -->
+	<div class="modal fade login" role="dialog" aria-labelledby="gridSystemModalLabel">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title" id="gridSystemModalLabel">Login</h4>
+				</div>
+				<div class="modal-body">
+					<div class="container-fluid">
+						<div class="row">
+							<div class="col-sm-12 form-box">
+								<div class="form-top">
+									<div class="form-top-left">
+										<h3>Login to our site</h3>
+										<p>Enter your username and password to log on:</p>
+									</div>
+									<div class="form-top-right">
+										<i class="fa fa-lock"></i>
+									</div>
+								</div>
+								<div class="form-bottom">
+									<form role="form" action="" method="post" class="login-form">
+										<div class="form-group">
+											<label class="sr-only" for="form-username">Username</label>
+											<input type="text" name="form-username" placeholder="Username..." class="form-username form-control" id="form-username">
+										</div>
+										<div class="form-group">
+											<label class="sr-only" for="form-password">Password</label>
+											<input type="password" name="form-password" placeholder="Password..." class="form-password form-control" id="form-password">
+										</div>
+										<button type="submit" class="btn sbbtn">Sign in!</button>
+									</form>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-sm-12 social-login">
+								<h3>or login with:</h3>
+								<div class="social-login-buttons">
+									<a class="btn btn-link-2" href="#">
+										<i class="fa fa-qq"></i>&nbsp;QQ&nbsp;
+									</a>
+									<a class="btn btn-link-2" href="#">
+										<i class="fa fa-weibo"></i>&nbsp;WeiBo&nbsp;
+									</a>
+									<a class="btn btn-link-2" href="#">
+										<i class="fa fa-github"></i>&nbsp;GitHub&nbsp;
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div><!-- /.modal-content -->
+		</div><!-- /.modal-dialog -->
+	</div><!-- /.modal -->
+	<!-- 登陆窗体 结束 -->
 <script src="../../static-resource/js/jquery.min.js"></script>
 <script src="../../static-resource/js/bootstrap.min.js"></script>
 
