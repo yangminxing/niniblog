@@ -6,6 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Bootstrap 101 Template</title>
 	<link href="../../static-resource/css/bootstrap.min.css" rel="stylesheet">
+	<link href="../../static-resource/css/font-awesome.css" rel="stylesheet">
 
 	<style>
 		/* 自适应屏幕 大于1000px时 */
@@ -36,7 +37,7 @@
 			right:0px;
 			height: 100%;
 			z-index: 1000;
-			background-image: url("../../static-resource/images/bg.jpg");
+			background-image: url("../../static-resource/images/star.jpg");
 		}
 
 
@@ -79,8 +80,8 @@
 </head>
 
 <body>
+	<!-- 左侧开始 -->
 	<div class="col-xs-2 nb_left">
-		<!-- 左侧展示栏 -->
 		<div class="container-fluid nb_left_container">
 			<!-- 图片行 -->
 			<div class="row nb_left_image ">
@@ -95,199 +96,162 @@
 					Yangminxing
 				</div>
 			</div>
+
+			<!-- 图标控制行 -->
+			<div class="row">
+				<div class="col-md-12 nb_left_title innercenter">
+					<i class="fa fa-envelope-o"></i>&nbsp;&nbsp;&nbsp;&nbsp;
+					<i class="fa fa-gear"></i>
+				</div>
+			</div>
 		</div>
 	</div>
+	<!-- 左侧结束 -->
 	<!-- 右侧开始 -->
 	<div class="col-xs-10 nb_right col-xs-offset-2">
-	    <!-- 导航开始 -->
-		<div class="row ">
-			<nav class="navbar navbar-default col-xs-offset-2 navbar-fixed-top" role="navigation">
-				<div class="navbar-header">
-					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-						<span class="sr-only">Toggle navigation</span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-					</button> <a class="navbar-brand" href="#">NiniBlog</a>
-				</div>
-
-				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-
+			<!-- 导航开始 -->
+			<div class="row ">
+				<nav class="navbar navbar-default col-xs-offset-2 navbar-fixed-top" role="navigation">
 					<!-- 导航栏左侧 开始 -->
-					<ul class="nav navbar-nav">
-						<li class="active">
-							<a href="#">Link</a>
-						</li>
-						<li>
-							<a href="#">Link</a>
-						</li>
-						<li class="dropdown">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown<strong class="caret"></strong></a>
-							<ul class="dropdown-menu">
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button> <a class="navbar-brand" href="#">NiniBlog</a>
+					</div>
+					<!-- 导航栏左侧 结束 -->
+					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+						<!-- 导航栏右侧 开始 -->
+						<div  class="navbar-right">
+							<form class="navbar-form navbar-left" role="search">
+								<div class="input-group">
+									<input type="text" class="form-control"  placeholder="" aria-label="...">
+									<span class="input-group-btn">
+										<button class="btn btn-default" type="button">Search</button>
+									  </span>
+								</div><!-- /input-group -->
+							</form>
+							<ul class="nav navbar-nav navbar-left" >
 								<li>
-									<a href="#">Action</a>
-								</li>
-								<li>
-									<a href="#">Another action</a>
-								</li>
-								<li>
-									<a href="#">Something else here</a>
-								</li>
-								<li class="divider">
-								</li>
-								<li>
-									<a href="#">Separated link</a>
-								</li>
-								<li class="divider">
+									  <a href="#">Log in</a>
 								</li>
 								<li>
-									<a href="#">One more separated link</a>
+									<a href="#">Sign in</a>
+								</li>
+								<li>
+									<a href="#"></a>
 								</li>
 							</ul>
-						</li>
-					</ul>
-					<!-- 导航栏左侧 结束 -->
-
-					<!-- 导航栏右侧 开始 -->
-					<div  class="navbar-right">
-						<form class="navbar-form navbar-left" role="search">
-							<div class="input-group">
-								<input type="text" class="form-control" aria-label="...">
-								<div class="input-group-btn">
-									<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-										Search <span class="caret"></span>
-									</button>
-									<ul class="dropdown-menu dropdown-menu-right">
-										<li><a href="#">Search My Title  </a></li>
-										<li><a href="#">Search My Content  </a></li>
-										<li role="separator" class="divider"></li>
-										<li><a href="#">Search All Title  </a></li>
-										<li><a href="#">Search All Content   </a></li>
-										<li role="separator" class="divider"></li>
-										<li><a href="#">Search Anything  </a></li>
-									</ul>
-								</div><!-- /btn-group -->
-							</div><!-- /input-group -->
-						</form>
-						<ul class="nav navbar-nav navbar-left" >
-							<li>
-								  <a href="#">Log in</a>
-							</li>
-							<li>
-								<a href="#">Sign in</a>
-							</li>
-							<li>
-								<a href="#"></a>
-							</li>
-						</ul>
+						</div>
+						<!-- 导航栏右侧 结束 -->
 					</div>
-					<!-- 导航栏右侧 结束 -->
-				</div>
-			</nav>
-		</div>
-		<!-- 导航结束 -->
-		<!-- 内容主体 -->
-		<div class="row nb_content " >
-			<div class="container-fluid">
-				<div class="row">
-					<div class="col-md-12 column">
-						<h2>
-							Heading
-						</h2>
-						<p>
-							Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
-						</p>
-						<p>
-							 <a class="btn" href="#">View details »</a>
-						</p>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-md-12 column">
-						<h2>
-							Heading
-						</h2>
-						<p>
-							Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
-						</p>
-						<p>
-							 <a class="btn" href="#">View details »</a>
-						</p>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-md-12 column">
-						<h2>
-							Heading
-						</h2>
-						<p>
-							Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
-						</p>
-						<p>
-							 <a class="btn" href="#">View details »</a>
-						</p>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-md-12 column">
-						<h2>
-							Heading
-						</h2>
-						<p>
-							Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
-						</p>
-						<p>
-							 <a class="btn" href="#">View details »</a>
-						</p>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-md-12 column">
-						<h2>
-							Heading
-						</h2>
-						<p>
-							Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
-						</p>
-						<p>
-							 <a class="btn" href="#">View details »</a>
-						</p>
-					</div>
-				</div>
-				
-				<!-- 分页开始 -->
-				<div class="row">
-					<div class="col-md-12 column">
-						<ul class="pagination">
-							<li>
-								 <a href="#">Prev</a>
-							</li>
-							<li>
-								 <a href="#">1</a>
-							</li>
-							<li>
-								 <a href="#">2</a>
-							</li>
-							<li>
-								 <a href="#">3</a>
-							</li>
-							<li>
-								 <a href="#">4</a>
-							</li>
-							<li>
-								 <a href="#">5</a>
-							</li>
-							<li>
-								 <a href="#">Next</a>
-							</li>
-						</ul>
-					</div>
-				</div>
-				<!-- 分页结束 -->
+				</nav>
 			</div>
-	</div>
-	    </div>
-		<!-- 结束内容主体 -->
+			<!-- 导航结束 -->
+			<!-- 内容主体开始 -->
+			<div class="row nb_content " >
+				<div class="container-fluid">
+					<div class="row">
+						<div class="col-md-12 column">
+							<h2>
+								Heading
+							</h2>
+							<p>
+								Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
+							</p>
+							<p>
+								 <a class="btn" href="#">View details »</a>
+							</p>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12 column">
+							<h2>
+								Heading
+							</h2>
+							<p>
+								Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
+							</p>
+							<p>
+								 <a class="btn" href="#">View details »</a>
+							</p>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12 column">
+							<h2>
+								Heading
+							</h2>
+							<p>
+								Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
+							</p>
+							<p>
+								 <a class="btn" href="#">View details »</a>
+							</p>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12 column">
+							<h2>
+								Heading
+							</h2>
+							<p>
+								Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
+							</p>
+							<p>
+								 <a class="btn" href="#">View details »</a>
+							</p>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12 column">
+							<h2>
+								Heading
+							</h2>
+							<p>
+								Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
+							</p>
+							<p>
+								 <a class="btn" href="#">View details »</a>
+							</p>
+						</div>
+					</div>
+
+					<!-- 分页开始 -->
+					<div class="row">
+						<div class="col-md-12 column">
+							<ul class="pagination">
+								<li>
+									 <a href="#">Prev</a>
+								</li>
+								<li>
+									 <a href="#">1</a>
+								</li>
+								<li>
+									 <a href="#">2</a>
+								</li>
+								<li>
+									 <a href="#">3</a>
+								</li>
+								<li>
+									 <a href="#">4</a>
+								</li>
+								<li>
+									 <a href="#">5</a>
+								</li>
+								<li>
+									 <a href="#">Next</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<!-- 分页结束 -->
+				</div>
+			</div>
+			<!-- 内容主体结束 -->
+
     </div>
 	<!-- 右侧结束 -->
 <script src="../../static-resource/js/jquery.min.js"></script>
