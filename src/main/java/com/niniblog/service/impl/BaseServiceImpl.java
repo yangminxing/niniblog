@@ -7,9 +7,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
+import java.util.List;
 
 /**
- * Created by lenovo on 2016/5/15.
+ * 基本服务实现类
  */
 @Service
 @Transactional
@@ -28,5 +29,10 @@ public class BaseServiceImpl<T> implements BaseService<T>
     public T get(int id)
     {
         return dao.get(id);
+    }
+
+    @Override
+    public List<T> findByExample(T example) {
+        return dao.findByExample(example);
     }
 }

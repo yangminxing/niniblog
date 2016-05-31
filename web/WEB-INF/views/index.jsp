@@ -5,8 +5,8 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Bootstrap 101 Template</title>
-	<link href="../../static-resource/css/bootstrap.min.css" rel="stylesheet">
-	<link href="../../static-resource/css/font-awesome.css" rel="stylesheet">
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/font-awesome.css" rel="stylesheet">
 
 	<style>
 		/* springmvc theme source 改 */
@@ -79,7 +79,7 @@
 			height: 100%;
 
 			z-index: 1000;
-			background-image: url("../../static-resource/images/star.jpg");
+			background-image: url("images/star.jpg");
 		}
 
 
@@ -412,8 +412,8 @@
 		</div><!-- /.modal-dialog -->
 	</div><!-- /.modal -->
 	<!-- 登陆窗体 结束 -->
-<script src="../../static-resource/js/jquery.min.js"></script>
-<script src="../../static-resource/js/bootstrap.min.js"></script>
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
 
 <script type="text/javascript">
 

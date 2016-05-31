@@ -3,7 +3,7 @@ package com.niniblog.dao;
 import com.niniblog.bean.BlogArticle;
 
 /**
- * Created by Yang on 2016/5/12.
+ * ²©¿ÍDao²ã
  */
 public interface BlogArticleDao extends BaseDao {
 

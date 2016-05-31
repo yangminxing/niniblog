@@ -1,10 +1,13 @@
 package com.niniblog.service;
 
+import java.util.List;
+
 /**
- * Created by lenovo on 2016/5/15.
+ * 基本服务接口
  */
 public interface BaseService<T> {
     public void save(T t);
     public T get(int id);
+    public List<T> findByExample(T example);
 }
 

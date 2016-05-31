@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.util.List;
+
 /**
  * Created by Yang on 2016/5/12.
  */
@@ -47,6 +49,12 @@ public class BlogArticleController {
         return mav;
     }
 
+    @RequestMapping(value = "/index")
+    public ModelAndView list()
+    {
+        ModelAndView modelAndView=new ModelAndView("/index.jsp");
+        List<BlogArticle> blogArticles=service.findByExample(new BlogArticle())
+    }
 
     public void transfer()
     {

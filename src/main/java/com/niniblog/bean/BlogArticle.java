@@ -6,7 +6,7 @@ import javax.persistence.*;
  * 博客文章bean.
  */
 @Entity
-@Table(name="blogarticles")
+@Table(name="tbblogarticles")
 public class BlogArticle {
 
     @Id
@@ -25,6 +25,11 @@ public class BlogArticle {
      * 文章内容
      */
     private String content;
+
+    /**
+     * 发表用户id
+     */
+    private Integer userid;
 
     public Integer getId() {
         return id;
@@ -48,5 +53,13 @@ public class BlogArticle {
 
     public void setContent(String content) {
         this.content = content;
+    }
+
+    public Integer getUserid() {
+        return userid;
+    }
+
+    public void setUserid(Integer userid) {
+        this.userid = userid;
     }
 }

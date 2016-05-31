@@ -10,7 +10,7 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class LinkController {
     /**
-     * ��ҳ
+     * 首页
      */
     @RequestMapping(value="/")
     public ModelAndView mainPage()
@@ -19,7 +19,7 @@ public class LinkController {
     }
 
     /**
-     * ��ҳ
+     * 首页
      */
     @RequestMapping(value="/index")
     public ModelAndView indexPage()

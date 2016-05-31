@@ -9,7 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 /**
- * Created by Yang on 2016/5/12.
+ * ≤©øÕ µœ÷Dao≤„
  */
 @Repository
 public class BlogArticleDaoImpl extends BaseDaoImpl<BlogArticle> implements BaseDao<BlogArticle>{
