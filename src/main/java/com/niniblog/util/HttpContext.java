@@ -30,7 +30,7 @@ public class HttpContext {
      */
     private HttpServletResponse httpServletResponse;
 
-    private User 
+    private User
 
     public int getCurrentPageIndex() {
         if(httpServletRequest!=null&&httpServletRequest.getParameter("pg_index")!=null)

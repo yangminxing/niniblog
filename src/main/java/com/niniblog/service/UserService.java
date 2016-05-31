@@ -1,7 +1,7 @@
 package com.niniblog.service;
 
 /**
- * ×¢²áÓÃ»§·şÎñÀà
+ * æ³¨å†Œç”¨æˆ·æœåŠ¡ç±»
  */
 public interface UserService {
 }

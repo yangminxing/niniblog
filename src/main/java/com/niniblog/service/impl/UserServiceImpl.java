@@ -1,7 +1,7 @@
 package com.niniblog.service.impl;
 
 /**
- * ×¢²áÓÃ»§ÊµÏÖÀà
+ * æ³¨å†Œç”¨æˆ·å®ç°ç±»
  */
 public class UserServiceImpl {
 }
