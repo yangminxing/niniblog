@@ -11,7 +11,7 @@ import javax.transaction.Transactional;
 import java.util.List;
 
 /**
- * ²©¿ÍÎÄÕÂÊµÏÖÀà
+ * åšå®¢æ–‡ç« å®ç°ç±»
  */
 @Service
 @Transactional
@@ -21,7 +21,7 @@ public class  BlogArticleServiceImpl extends BaseServiceImpl<BlogArticle> implem
     private BlogArticleDao blogArticleDao;
 
     /**
-     * ÏÔÊ¾µ±Ç°µÇÂ¼
+     * åªæ˜¾ç¤ºå½“å‰ç™»å½•äººçš„æ–‡ç« 
      */
     public List<BlogArticle> listMaster(BlogArticle blogArticle,HttpContext context)
     {

@@ -4,19 +4,19 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * ºó¶ËÊı¾İÉÏÏÂÎÄ
+ * åç«¯æ•°æ®ä¸Šä¸‹æ–‡
  */
 public class HttpContext {
     /**
-     * µ±Ç°Ò³Ğò
+     * å½“å‰é¡µåº
      */
     private int currentPageIndex;
     /**
-     * Ò³Êı
+     * é¡µæ•°
      */
     private int pageCount;
     /**
-     * Ã¿Ò³ÏÔÊ¾Êı
+     * æ¯é¡µæ˜¾ç¤ºæ•°
      */
     private int pageSize;
 

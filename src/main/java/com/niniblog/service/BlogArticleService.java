@@ -3,7 +3,7 @@ package com.niniblog.service;
 import com.niniblog.bean.BlogArticle;
 
 /**
- * ²©¿ÍÎÄÕÂÊµÏÖÀà
+ * åšå®¢æ–‡ç« å®ç°ç±»
  */
 public interface BlogArticleService extends BaseService<BlogArticle>
 {
