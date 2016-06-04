@@ -12,6 +12,6 @@ import org.springframework.stereotype.Repository;
  * ≤©øÕ µœ÷Dao≤„
  */
 @Repository
-public class BlogArticleDaoImpl extends BaseDaoImpl<BlogArticle> implements BaseDao<BlogArticle>{
+public class BlogArticleDaoImpl extends BaseDaoImpl<BlogArticle> implements BlogArticleDao<BlogArticle>{
 
 }

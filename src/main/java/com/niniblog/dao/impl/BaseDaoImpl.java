@@ -7,7 +7,9 @@ import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.criterion.Example;
+import org.hibernate.criterion.Order;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.orm.hibernate3.HibernateTemplate;
 import org.springframework.stereotype.Repository;
 
 import java.lang.reflect.ParameterizedType;
@@ -64,5 +66,21 @@ public class BaseDaoImpl<T> implements BaseDao<T> {
             throw ex;
         }
         return entities;
+    }
+
+    @Override
+    public List<T> findByExample(T example,int pageIndex,int pageSize)
+    {
+        ArrayList<T> entities=new ArrayList<T>();
+        try
+        {
+            Criteria e=this.getCurrentSession().createCriteria(this.clazz);
+            e.add(Example.create(example)).setFirstResult(pageIndex).setMaxResults(pageSize);
+            entities.addAll(e.list());
+        }
+        catch(HibernateException ex)
+        {
+            throw ex;
+        }
     }
 }

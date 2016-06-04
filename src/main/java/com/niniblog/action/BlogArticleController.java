@@ -13,7 +13,7 @@ import org.springframework.web.servlet.ModelAndView;
 import java.util.List;
 
 /**
- * Created by Yang on 2016/5/12.
+ * 博客类文章控制器
  */
 @Controller
 public class BlogArticleController {

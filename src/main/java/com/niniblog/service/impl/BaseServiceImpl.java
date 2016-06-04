@@ -1,8 +1,8 @@
 package com.niniblog.service.impl;
 
-import com.niniblog.bean.BlogArticle;
 import com.niniblog.dao.BaseDao;
 import com.niniblog.service.BaseService;
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -16,6 +16,8 @@ import java.util.List;
 @Transactional
 public class BaseServiceImpl<T> implements BaseService<T>
 {
+    public Logger logger=Logger.getLogger("BaseServiceImpl");
+
     @Autowired
     private BaseDao<T> dao;
 

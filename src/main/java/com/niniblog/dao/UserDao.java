@@ -1,8 +1,8 @@
 package com.niniblog.dao;
 
 /**
- * Created by Yang on 2016/5/31.
+ * 用户Dao层接口
  */
-public interface UserDao extends BaseDao
+public interface UserDao<T> extends BaseDao<T>
 {
 }

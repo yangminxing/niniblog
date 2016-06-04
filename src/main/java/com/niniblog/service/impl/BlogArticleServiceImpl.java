@@ -21,12 +21,10 @@ public class  BlogArticleServiceImpl extends BaseServiceImpl<BlogArticle> implem
     private BlogArticleDao blogArticleDao;
 
     /**
-     * 只显示当前登录人的文章
+     * 显示文章
      */
-    public List<BlogArticle> listMaster(BlogArticle blogArticle,HttpContext context)
+    public List<BlogArticle> list(BlogArticle blogArticle,HttpContext context)
     {
-        int userid=user.getId();
-
 
     }
 }
