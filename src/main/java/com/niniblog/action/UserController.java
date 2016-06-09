@@ -10,7 +10,7 @@ import org.springframework.web.servlet.ModelAndView;
 import javax.servlet.http.HttpServletRequest;
 
 /**
- * 用户操作类控制器
+ * 鐢ㄦ埛鎿嶄綔绫绘帶鍒跺櫒
  */
 @Controller
 public class UserController extends BaseController
