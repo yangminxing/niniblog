@@ -30,6 +30,12 @@ public class HttpContext {
      */
     private HttpServletResponse httpServletResponse;
 
+    public HttpContext(HttpServletRequest request,HttpServletResponse response)
+    {
+        this.httpServletRequest=request;
+        this.httpServletResponse=response;
+    }
+
     public int getCurrentPageIndex() {
         if(httpServletRequest!=null&&httpServletRequest.getParameter("pg_index")!=null)
             return Integer.valueOf(httpServletRequest.getParameter("pg_index"));

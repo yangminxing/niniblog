@@ -37,4 +37,10 @@ public class BaseServiceImpl<T> implements BaseService<T>
     public List<T> findByExample(T example) {
         return dao.findByExample(example);
     }
+
+    @Override
+    public List<T> findByExample(T example,int index,int size)
+    {
+        return dao.findByExample(example,index,size);
+    }
 }

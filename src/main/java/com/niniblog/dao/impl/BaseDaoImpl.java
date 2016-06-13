@@ -82,5 +82,6 @@ public class BaseDaoImpl<T> implements BaseDao<T> {
         {
             throw ex;
         }
+        return entities;
     }
 }

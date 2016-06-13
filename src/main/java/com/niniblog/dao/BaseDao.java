@@ -18,6 +18,7 @@ public interface BaseDao<T> {
      */
     public <T> T get(int id);
 
-
     public List<T> findByExample(T example);
+
+    public List<T> findByExample(T example,int pageIndex,int pageSize);
 }

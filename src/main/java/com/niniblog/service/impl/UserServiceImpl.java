@@ -17,12 +17,10 @@ public class UserServiceImpl extends BaseServiceImpl<User> implements UserServic
     private UserDao userDao;
 
     /**
-     * 验证用户是否已经登录
+     * 查找用户
      */
-    public boolean login(String username,String password,HttpSession session)
+    public User find(User user)
     {
-
-
-
+        return (User)userDao.findByExample(user);
     }
 }

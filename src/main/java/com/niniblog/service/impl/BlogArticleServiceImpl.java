@@ -25,6 +25,6 @@ public class  BlogArticleServiceImpl extends BaseServiceImpl<BlogArticle> implem
      */
     public List<BlogArticle> list(BlogArticle blogArticle,HttpContext context)
     {
-
+        return blogArticleDao.findByExample(blogArticle,context.getCurrentPageIndex(),context.getPageSize());
     }
 }

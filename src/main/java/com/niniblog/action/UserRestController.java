@@ -17,7 +17,7 @@ import javax.servlet.http.HttpServletRequest;
  * 用户操作类控制器
  */
 @RestController
-public class UserController extends BaseController
+public class UserRestController extends BaseController
 {
     @Autowired
     private UserService userService;
@@ -35,28 +35,30 @@ public class UserController extends BaseController
         if(StringUtils.isEmpty(username)||StringUtils.isEmpty(password))
         {
             frontEndResult.setErrorMsg("username or password could be null");
-            return;
+            return frontEndResult;
         }
 
         User vUser=new User();
         vUser.setUsername(username);
-        User vUser2= (User)userDao.findByExample(vUser);
-        if(vUser)
-
-            if(vUser2.getPassword()==null)
-            {
-                logger.error("This user named:"+username+" don't not have a password.");
-                return false;
-            }
-        if(vUser2.getPassword().equals(password))
+        User vUser2= userService.find(vUser);
+        if(vUser2==null)
         {
-            session.setAttribute("user",);
-
-            logger.debug("This user named:"+username+" logged success");
-            return true;
+            frontEndResult.setErrorMsg("User is not exists");
+            return frontEndResult;
         }
 
-        logger.debug("This user named:"+username+" logged failed");
-        return false;
+        if(vUser2.getPassword()==null) {
+            frontEndResult.setErrorMsg("Password is not correct");
+            return frontEndResult;
+        }
+        if(vUser2.getPassword().equals(password))
+        {
+            request.getSession().setAttribute("user", vUser2);
+            logger.debug("This user named:"+username+" logged success");
+            frontEndResult.setContent(vUser2);
+        }
+
+        frontEndResult.setErrorMsg("Password is not correct");
+        return frontEndResult;
     }
 }
