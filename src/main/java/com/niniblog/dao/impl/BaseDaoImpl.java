@@ -1,5 +1,6 @@
 package com.niniblog.dao.impl;
 
+import com.niniblog.bean.BlogArticle;
 import com.niniblog.dao.BaseDao;
 import org.apache.log4j.Logger;
 import org.hibernate.Criteria;
@@ -31,12 +32,12 @@ public class BaseDaoImpl<T> implements BaseDao<T> {
         return sessionFactory.getCurrentSession();
     }
 
-    private Class<T> clazz;
+    private Class<?> clazz;
     
     public BaseDaoImpl()
     {
-        ParameterizedType type=(ParameterizedType)this.getClass().getGenericSuperclass();
-        this.clazz=(Class)type.getActualTypeArguments()[0];
+        ParameterizedType type=(Class<T>)(ParameterizedType)this.getClass().getGenericSuperclass();
+        this.clazz=type.getActualTypeArguments()[0];
     }
 
     @Override

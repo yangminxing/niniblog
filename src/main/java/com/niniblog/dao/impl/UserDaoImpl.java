@@ -9,5 +9,5 @@ import org.springframework.stereotype.Repository;
  * 用户实现Dao层
  */
 @Repository
-public class UserDaoImpl extends BaseDaoImpl<User> implements BaseDao<User> {
+public class UserDaoImpl extends BaseDaoImpl<User> implements UserDao<User> {
 }

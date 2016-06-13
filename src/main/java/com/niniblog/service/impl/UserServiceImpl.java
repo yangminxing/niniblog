@@ -5,12 +5,16 @@ import com.niniblog.dao.UserDao;
 import com.niniblog.service.UserService;
 import com.niniblog.util.HttpContext;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.servlet.http.HttpSession;
 
 /**
  * 注册用户实现类
  */
+@Service
+@Transactional
 public class UserServiceImpl extends BaseServiceImpl<User> implements UserService
 {
     @Autowired
