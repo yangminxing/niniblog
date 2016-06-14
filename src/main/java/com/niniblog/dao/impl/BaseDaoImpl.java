@@ -11,15 +11,19 @@ import org.hibernate.criterion.Example;
 import org.hibernate.criterion.Order;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.orm.hibernate3.HibernateTemplate;
+import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 import org.springframework.stereotype.Repository;
 
+import javax.persistence.Transient;
 import java.lang.reflect.ParameterizedType;
+import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by Yang on 2016/5/14.
+ * 底层的Dao实现
  */
+@SuppressWarnings("unchecked")
 @Repository
 public class BaseDaoImpl<T> implements BaseDao<T> {
 
@@ -32,12 +36,28 @@ public class BaseDaoImpl<T> implements BaseDao<T> {
         return sessionFactory.getCurrentSession();
     }
 
-    private Class<?> clazz;
-    
+    @Transient  private Class<T> clazz;
+
+    //危险的类型转换进行了忽略
+    @SuppressWarnings("unchecked")
     public BaseDaoImpl()
     {
-        ParameterizedType type=(Class<T>)(ParameterizedType)this.getClass().getGenericSuperclass();
-        this.clazz=type.getActualTypeArguments()[0];
+        Class obtainedClass=getClass();
+        Type genericSuperclass=null;
+        for(;;)
+        {
+            if(obtainedClass.getGenericSuperclass().equals(Object.class))
+                break;
+            genericSuperclass=obtainedClass.getGenericSuperclass();
+            if(genericSuperclass instanceof ParameterizedType)
+                break;
+            obtainedClass=obtainedClass.getSuperclass();
+        }
+
+        if(genericSuperclass!=null) {
+            ParameterizedType gen = (ParameterizedType) genericSuperclass;
+            clazz = ((Class) (Class) gen.getActualTypeArguments()[0]);
+        }
     }
 
     @Override

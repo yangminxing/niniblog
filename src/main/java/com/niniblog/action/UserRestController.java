@@ -22,8 +22,7 @@ public class UserRestController extends BaseController
     @Autowired
     private UserService userService;
 
-    @RequestMapping("/login")
-    @ResponseBody
+    @RequestMapping(value = "/login",produces = "application/json;charset=utf-8" )
     public FrontEndResult login(HttpServletRequest request)
     {
         logger.debug("System login started.");
@@ -57,8 +56,9 @@ public class UserRestController extends BaseController
             logger.debug("This user named:"+username+" logged success");
             frontEndResult.setContent(vUser2);
         }
-
-        frontEndResult.setErrorMsg("Password is not correct");
+        else {
+            frontEndResult.setErrorMsg("Password is not correct");
+        }
         return frontEndResult;
     }
 }

@@ -1,5 +1,7 @@
 package com.niniblog.result;
 
+import com.google.gson.Gson;
+
 /**
  * 返回前端的数据对象
  */
@@ -22,5 +24,10 @@ public class FrontEndResult {
 
     public void setErrorMsg(String errorMsg) {
         this.errorMsg = errorMsg;
+    }
+
+    public String toString()
+    {
+        return new Gson().toJson(this);
     }
 }

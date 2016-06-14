@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.servlet.http.HttpSession;
+import java.util.List;
 
 /**
  * 注册用户实现类
@@ -25,6 +26,10 @@ public class UserServiceImpl extends BaseServiceImpl<User> implements UserServic
      */
     public User find(User user)
     {
-        return (User)userDao.findByExample(user);
+        List<User> list=userDao.findByExample(user);
+        if(list==null||list.size()==0)
+            return null;
+
+        return list.get(0);
     }
 }

@@ -3,8 +3,8 @@ package com.niniblog.dao;
 import com.niniblog.bean.BlogArticle;
 
 /**
- * ≤©øÕDao≤„
+ * ÂçöÂÆ¢DaoÂ±Ç
  */
-public interface BlogArticleDao<T> extends BaseDao<T> {
+public interface BlogArticleDao<BlogArticle> extends BaseDao<com.niniblog.bean.BlogArticle> {
 
 }
