@@ -39,6 +39,15 @@ public class UserServiceImpl extends BaseServiceImpl<User> implements UserServic
     }
 
     /**
+     * 添加到黑名单
+     */
+    public UserLoginBlack addUserLoginBlack(Integer userid,String ipaddress)
+    {
+        UserLoginBlack userLoginBlack= findUserLoginBlack(userid,ipaddress);
+        if(userLoginBlack!=null)
+    }
+
+    /**
      * 查找登录黑名单
      */
     public UserLoginBlack findUserLoginBlack(Integer userid,String ipaddress)
