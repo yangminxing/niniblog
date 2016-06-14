@@ -22,6 +22,10 @@ public class UserRestController extends BaseController
     @Autowired
     private UserService userService;
 
+
+    /**
+     * 登录验证
+     */
     @RequestMapping(value = "/login",produces = "application/json;charset=utf-8" )
     public FrontEndResult login(HttpServletRequest request)
     {
@@ -54,11 +58,46 @@ public class UserRestController extends BaseController
         {
             request.getSession().setAttribute("user", vUser2);
             logger.debug("This user named:"+username+" logged success");
+            //clear password
+            vUser2.setPassword("Not try to get a password");
             frontEndResult.setContent(vUser2);
         }
         else {
             frontEndResult.setErrorMsg("Password is not correct");
         }
+        return frontEndResult;
+    }
+
+    /**
+     * 登出
+     */
+    @RequestMapping(value="/loginout",produces = "application/json;charset=utf-8")
+    public FrontEndResult loginout(HttpServletRequest request)
+    {
+        logger.debug("System loginout started.");
+
+        if(request.getSession().getAttribute("user")!=null)
+        {
+            request.getSession().removeAttribute("user");
+        }
+
+        logger.debug("System loginout end.");
+        return new FrontEndResult(){
+            @Override
+            public Object getContent() {
+                return "true";
+            }
+        };
+    }
+
+    /**
+     * 注册
+     */
+    @RequestMapping(value = "/register",produces = "application/json;charset=utf-8")
+    public FrontEndResult register()
+    {
+        FrontEndResult frontEndResult=new FrontEndResult();
+
         return frontEndResult;
     }
 }

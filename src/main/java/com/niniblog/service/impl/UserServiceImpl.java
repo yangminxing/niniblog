@@ -1,7 +1,9 @@
 package com.niniblog.service.impl;
 
 import com.niniblog.bean.User;
+import com.niniblog.bean.UserLoginBlack;
 import com.niniblog.dao.UserDao;
+import com.niniblog.dao.UserLoginBlackDao;
 import com.niniblog.service.UserService;
 import com.niniblog.util.HttpContext;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,6 +23,9 @@ public class UserServiceImpl extends BaseServiceImpl<User> implements UserServic
     @Autowired
     private UserDao userDao;
 
+    @Autowired
+    private UserLoginBlackDao userLoginBlackDao;
+
     /**
      * 查找用户
      */
@@ -31,5 +36,30 @@ public class UserServiceImpl extends BaseServiceImpl<User> implements UserServic
             return null;
 
         return list.get(0);
+    }
+
+    /**
+     * 查找登录黑名单
+     */
+    public UserLoginBlack findUserLoginBlack(Integer userid,String ipaddress)
+    {
+        UserLoginBlack loginBlack=new UserLoginBlack();
+        loginBlack.setIpaddress(ipaddress);
+        loginBlack.setUserid(userid);
+        loginBlack=(UserLoginBlack)userLoginBlackDao.findByExampleOne(loginBlack);
+        return loginBlack;
+    }
+
+    /**
+     * 移除登录黑名单
+     */
+    public boolean removeUserLoginBlack(Integer userid,String ipaddress)
+    {
+        UserLoginBlack userLoginBlack= findUserLoginBlack(userid,ipaddress);
+        if(userLoginBlack!=null)
+        {
+            userLoginBlackDao.delete(userLoginBlack.getId());
+        }
+        return true;
     }
 }

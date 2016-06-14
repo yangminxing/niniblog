@@ -66,6 +66,14 @@ public class BaseDaoImpl<T> implements BaseDao<T> {
     }
 
     @Override
+    public void delete(int id)
+    {
+        Session session=this.getCurrentSession();
+        Object entity=session.get(this.clazz,id);
+        session.delete(entity);
+    }
+
+    @Override
     public T get(int id) {
         Class<T> tClass=(Class<T>) ((ParameterizedType) getClass().getGenericSuperclass()).getActualTypeArguments()[0];
         T article=(T)getCurrentSession().get(tClass,id);
@@ -87,6 +95,27 @@ public class BaseDaoImpl<T> implements BaseDao<T> {
             throw ex;
         }
         return entities;
+    }
+
+    @Override
+    public T findByExampleOne(T example)
+    {
+        ArrayList entities=new ArrayList();
+        try
+        {
+            Criteria e=this.getCurrentSession().createCriteria(this.clazz);
+            e.add(Example.create(example));
+            entities.addAll(e.list());
+        }
+        catch (HibernateException ex)
+        {
+            throw ex;
+        }
+
+        if(entities.size()>0)
+            return (T)entities.get(0);
+
+        return null;
     }
 
     @Override
