@@ -18,13 +18,13 @@ prevent reduplicative articles.
 
 Finally I have not finish it. I am working on it!
 
-Environment:
-Java Version: JDK 1.8
-Building Tools: Maven
-DataBase: MySQL 5.5
-View: SpringMVC 4
-Controller: Spring 4
-ORM: Hibernate 4
-WebContainer: Apache Tomcat 6
-IDE: JetBrains Idea 14
+Environment:<br />
+Java Version: JDK 1.8 <br />
+Building Tools: Maven<br />
+DataBase: MySQL 5.5<br />
+View: SpringMVC 4<br />
+Controller: Spring 4<br />
+ORM: Hibernate 4<br />
+WebContainer: Apache Tomcat 6<br />
+IDE: JetBrains Idea 14<br />
 
