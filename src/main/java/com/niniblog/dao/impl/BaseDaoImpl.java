@@ -66,18 +66,6 @@ public class BaseDaoImpl<T> implements BaseDao<T> {
     }
 
     @Override
-    public <T> void update(T obj)
-    {
-        getCurrentSession().update(obj);
-    }
-
-    @Override
-    public <T> void saveOrUpdate(T obj)
-    {
-        getCurrentSession().saveOrUpdate(obj);
-    }
-
-    @Override
     public void delete(int id)
     {
         Session session=this.getCurrentSession();

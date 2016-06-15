@@ -45,7 +45,6 @@ public class UserServiceImpl extends BaseServiceImpl<User> implements UserServic
     {
         UserLoginBlack userLoginBlack= findUserLoginBlack(userid,ipaddress);
         if(userLoginBlack!=null)
-
     }
 
     /**

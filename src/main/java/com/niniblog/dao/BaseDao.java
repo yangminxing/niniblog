@@ -13,16 +13,6 @@ public interface BaseDao<T> {
     public <T> void save(T t);
 
     /**
-     * 更新
-     */
-    public <T> void update(T obj);
-
-    /**
-     * 保存或者更新
-     */
-    public <T> void saveOrUpdate(T obj);
-
-    /**
      * 删除
      */
     public void delete(int id);
