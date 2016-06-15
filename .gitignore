@@ -47,3 +47,8 @@ Temporary Items
 .svn/wc.db
 .svn/format
 referance.txt
+*.class
+*.class
+target/classes/com/niniblog/dao/BlogArticleDao.class
+*.class
+*.class

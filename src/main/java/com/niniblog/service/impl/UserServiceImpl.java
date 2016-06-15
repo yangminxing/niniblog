@@ -41,10 +41,23 @@ public class UserServiceImpl extends BaseServiceImpl<User> implements UserServic
     /**
      * 添加到黑名单
      */
-    public UserLoginBlack addUserLoginBlack(Integer userid,String ipaddress)
+    public void addUserLoginBlack(Integer userid,String ipaddress)
     {
         UserLoginBlack userLoginBlack= findUserLoginBlack(userid,ipaddress);
+        //如果之前没有黑名单 插入操作
         if(userLoginBlack!=null)
+        {
+            userLoginBlack.setLimited(1);
+            userLoginBlack.setUserid(userid);
+            userLoginBlack.setIpaddress(ipaddress);
+            userLoginBlackDao.save(userLoginBlack);
+        }
+        //如果之前更新加1
+        else
+        {
+            userLoginBlack.setLimited(userLoginBlack.getLimited()+1);
+            userLoginBlackDao.saveOrUpdate(userLoginBlack);
+        }
 
     }
 
