@@ -52,3 +52,4 @@ referance.txt
 target/classes/com/niniblog/dao/BlogArticleDao.class
 *.class
 *.class
+*.class
