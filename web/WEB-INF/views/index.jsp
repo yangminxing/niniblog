@@ -223,7 +223,7 @@
 									  <a href="#" data-toggle="modal" data-target=".login">Log in</a>
 								</li>
 								<li>
-									<a href="#">Sign up</a>
+									<a href="#"  data-toggle="modal" data-target=".sign">Sign up</a>
 								</li>
 								<li>
 									<a href="#"></a>
@@ -385,7 +385,7 @@
 											<label class="sr-only" for="form-password">Password</label>
 											<input type="password" name="form-password" placeholder="Password..." class="form-password form-control" id="form-password">
 										</div>
-										<button type="submit" class="btn sbbtn">Sign in!</button>
+										<button type="submit" class="btn sbbtn">Login in!</button>
 									</form>
 								</div>
 							</div>
@@ -412,11 +412,54 @@
 		</div><!-- /.modal-dialog -->
 	</div><!-- /.modal -->
 	<!-- 登陆窗体 结束 -->
-<script src="js/jquery.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-
-<script type="text/javascript">
-
-</script>
+	<!-- 注册窗体 开始 -->
+	<div class="modal fade sign" role="dialog" aria-labelledby="gridSystemModalLabel">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h4 class="modal-title" id="gridSystemModalLabel">Sign up</h4>
+				</div>
+				<div class="modal-body">
+					<div class="container-fluid">
+						<div class="row">
+							<div class="col-sm-12 form-box">
+								<div class="form-top">
+									<div class="form-top-left">
+										<h3>Welcome to our site</h3>
+										<p>Enter your username and password to sign up:</p>
+									</div>
+									<div class="form-top-right">
+										<i class="fa fa-lock"></i>
+									</div>
+								</div>
+								<div class="form-bottom">
+									<form role="form" action="" method="post" class="login-form">
+										<div class="form-group">
+											<label class="sr-only" for="form-username">Username</label>
+											<input type="text" name="form-username" placeholder="Username..." class="form-username form-control" id="form-username">
+										</div>
+										<div class="form-group">
+											<label class="sr-only" for="form-password">Password</label>
+											<input type="password" name="form-password" placeholder="Password..." class="form-password form-control" id="form-password">
+										</div>
+										<div class="form-group">
+											<label class="sr-only" for="form-password">Repeat Password</label>
+											<input type="password" name="form-password" placeholder="Repeat Password..." class="form-password form-control" id="form-password">
+										</div>
+										<button type="submit" class="btn sbbtn">Sign up!</button>
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div><!-- /.modal-content -->
+		</div><!-- /.modal-dialog -->
+	</div><!-- /.modal -->
+	<!-- 注册窗体 结束 -->
+	<script src="js/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script type="text/javascript"></script>
 </body>
 </html>
