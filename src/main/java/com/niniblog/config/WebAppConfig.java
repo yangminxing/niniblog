@@ -11,6 +11,10 @@ import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 import org.springframework.web.servlet.view.JstlView;
 import org.springframework.web.servlet.view.UrlBasedViewResolver;
+import org.springframework.web.servlet.view.freemarker.FreeMarkerConfig;
+import org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer;
+import org.springframework.web.servlet.view.freemarker.FreeMarkerView;
+import org.springframework.web.servlet.view.freemarker.FreeMarkerViewResolver;
 
 import javax.annotation.Resource;
 import javax.sql.DataSource;
@@ -77,14 +81,21 @@ public class WebAppConfig extends WebMvcConfigurerAdapter
     }
 
     @Bean
-    public UrlBasedViewResolver setupViewResolver()
+    public FreeMarkerViewResolver setupViewResolver()
     {
-        UrlBasedViewResolver resolver=new UrlBasedViewResolver();
+        FreeMarkerViewResolver freemarkerResolver=new FreeMarkerViewResolver();
+        //freemarkerResolver.setPrefix("/WEB-INF/views/");
+        freemarkerResolver.setSuffix(".ftl");
+       // freemarkerResolver.setContentType("utf-8");
+        //freemarkerResolver.setViewClass(FreeMarkerView.class);
+        return freemarkerResolver;
+    }
 
-        resolver.setPrefix("/WEB-INF/views/");
-        resolver.setSuffix(".jsp");
-        resolver.setViewClass(JstlView.class);
-        return resolver;
+    @Bean
+    public FreeMarkerConfigurer freemarkerConfig() {
+        FreeMarkerConfigurer configurer = new FreeMarkerConfigurer();
+        configurer.setTemplateLoaderPath("/WEB-INF/views/");
+        return configurer;
     }
 
     /**
