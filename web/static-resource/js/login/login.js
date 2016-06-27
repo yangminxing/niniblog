@@ -4,7 +4,7 @@ jQuery(document).ready(function() {
     /*
         Fullscreen background
     */
-    $.backstretch("../../static-resource/images/login.jpg");
+   // $.backstretch("../../static-resource/images/login.jpg");
     
     /*
         Form validation
@@ -24,8 +24,27 @@ jQuery(document).ready(function() {
     			$(this).removeClass('input-error');
     		}
     	});
-    	
     });
-    
+
+	/**
+	 * 注册事件
+	 */
+	$('.sign-form').on('submit',function(e){
+		$.ajax({
+			cache: true,
+			type: "POST",
+			url:"/register",
+			data:$('.sign-form').serialize(),
+			async: false,
+			success: function(data) {
+				//$("#commonLayout_appcreshi").parent().html(data);
+			},
+			error: function(request) {
+				//alert("Connection error");
+			}
+		});
+	});
     
 });
+
+

@@ -1,5 +1,6 @@
 package com.niniblog.action;
 
+import com.niniblog.bean.BlogArticle;
 import com.niniblog.bean.User;
 import com.niniblog.result.FrontEndResult;
 import com.niniblog.service.UserService;
@@ -16,7 +17,7 @@ import javax.servlet.http.HttpServletRequest;
 /**
  * 用户操作类控制器
  */
-@RestController
+@Controller
 public class UserRestController extends BaseController
 {
     @Autowired
@@ -94,10 +95,11 @@ public class UserRestController extends BaseController
      * 注册
      */
     @RequestMapping(value = "/register",produces = "application/json;charset=utf-8")
-    public FrontEndResult register()
+    public ModelAndView register(HttpServletRequest request)
     {
-        FrontEndResult frontEndResult=new FrontEndResult();
+        ModelAndView mav=new ModelAndView("/index");
 
-        return frontEndResult;
+        mav.addObject("user",new User());
+        return mav;
     }
 }
