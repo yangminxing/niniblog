@@ -54,17 +54,17 @@ public class BlogArticleController {
         return mav;
     }
 
-    /**
-     * 根据Author显示Author的
-     */
-    @RequestMapping(value =  "/{author}")
-    public ModelAndView list(@ModelAttribute("author") String author, HttpServletRequest request,HttpServletResponse response)
-    {
-        ModelAndView modelAndView=new ModelAndView("/blogarticle/list_blogarticle");
-        List<BlogArticle> blogArticles=service.list(new BlogArticle(), new HttpContext(request, response));
-        modelAndView.addObject("blogarticles",blogArticles);
-        return modelAndView;
-    }
+//    /**
+//     * 根据Author显示Author的
+//     */
+//    @RequestMapping(value =  "/{author}")
+//    public ModelAndView list(@ModelAttribute("author") String author, HttpServletRequest request,HttpServletResponse response)
+//    {
+//        ModelAndView modelAndView=new ModelAndView("/blogarticle/list_blogarticle");
+//        List<BlogArticle> blogArticles=service.list(new BlogArticle(), new HttpContext(request, response));
+//        modelAndView.addObject("blogarticles",blogArticles);
+//        return modelAndView;
+//    }
 
     public void transfer()
     {

@@ -10,6 +10,7 @@ import org.hibernate.SessionFactory;
 import org.hibernate.criterion.Example;
 import org.hibernate.criterion.Order;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Primary;
 import org.springframework.orm.hibernate3.HibernateTemplate;
 import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
 import org.springframework.stereotype.Repository;
@@ -24,6 +25,7 @@ import java.util.List;
  * 底层的Dao实现
  */
 @SuppressWarnings("unchecked")
+@Primary
 @Repository
 public class BaseDaoImpl<T> implements BaseDao<T> {
 
@@ -36,7 +38,7 @@ public class BaseDaoImpl<T> implements BaseDao<T> {
         return sessionFactory.getCurrentSession();
     }
 
-    @Transient  private Class<T> clazz;
+     private Class<T> clazz;
 
     //危险的类型转换进行了忽略
     @SuppressWarnings("unchecked")
@@ -60,24 +62,20 @@ public class BaseDaoImpl<T> implements BaseDao<T> {
         }
     }
 
-    @Override
     public <T> void save(T obj) {
         getCurrentSession().save(obj);
     }
 
-    @Override
     public <T> void update(T obj)
     {
         getCurrentSession().update(obj);
     }
 
-    @Override
     public <T> void saveOrUpdate(T obj)
     {
         getCurrentSession().saveOrUpdate(obj);
     }
 
-    @Override
     public void delete(int id)
     {
         Session session=this.getCurrentSession();
@@ -85,14 +83,12 @@ public class BaseDaoImpl<T> implements BaseDao<T> {
         session.delete(entity);
     }
 
-    @Override
     public T get(int id) {
         Class<T> tClass=(Class<T>) ((ParameterizedType) getClass().getGenericSuperclass()).getActualTypeArguments()[0];
         T article=(T)getCurrentSession().get(tClass,id);
         return article;
     }
 
-    @Override
     public List<T> findByExample(T example)
     {
         ArrayList entities=new ArrayList();
@@ -109,7 +105,6 @@ public class BaseDaoImpl<T> implements BaseDao<T> {
         return entities;
     }
 
-    @Override
     public T findByExampleOne(T example)
     {
         ArrayList entities=new ArrayList();
@@ -130,7 +125,6 @@ public class BaseDaoImpl<T> implements BaseDao<T> {
         return null;
     }
 
-    @Override
     public List<T> findByExample(T example,int pageIndex,int pageSize)
     {
         ArrayList<T> entities=new ArrayList<T>();

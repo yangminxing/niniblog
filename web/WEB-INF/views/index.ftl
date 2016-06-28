@@ -192,7 +192,8 @@
 	<!-- 右侧开始 -->
 	<div class="col-xs-10 nb_right">
 			<!-- 导航开始 -->
-			<%@ include file="common/top.jsp"%>
+			<#--<%@ include file="common/top.jsp"%>-->
+			<#include "common/top.ftl">
 			<!-- 导航结束 -->
 			<!-- 内容主体开始 -->
 			<div class="row nb_content " >

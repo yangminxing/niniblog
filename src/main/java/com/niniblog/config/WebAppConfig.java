@@ -6,6 +6,7 @@ import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.orm.hibernate4.HibernateTransactionManager;
 import org.springframework.orm.hibernate4.LocalSessionFactoryBean;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
+import org.springframework.web.servlet.ViewResolver;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
@@ -80,14 +81,16 @@ public class WebAppConfig extends WebMvcConfigurerAdapter
         return transactionManager;
     }
 
+
+
     @Bean
-    public FreeMarkerViewResolver setupViewResolver()
+    public ViewResolver setupViewResolver()
     {
         FreeMarkerViewResolver freemarkerResolver=new FreeMarkerViewResolver();
         //freemarkerResolver.setPrefix("/WEB-INF/views/");
         freemarkerResolver.setSuffix(".ftl");
        // freemarkerResolver.setContentType("utf-8");
-        //freemarkerResolver.setViewClass(FreeMarkerView.class);
+        freemarkerResolver.setViewClass(FreeMarkerView.class);
         return freemarkerResolver;
     }
 
