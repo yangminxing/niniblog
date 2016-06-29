@@ -213,73 +213,22 @@
 						</div>
 					</div>
 					<!-- 正文 -->
+					<#list blogarticles as blogarticle>
 					<div class="row">
 						<div class="col-md-12 column">
 							<h2>
-								Heading
+								${blogarticle.title}
 							</h2>
 							<p>
-								Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
+								${blogarticle.content}
 							</p>
 							<p>
 								 <a class="btn" href="#">View details »</a>
 							</p>
 						</div>
 					</div>
-					<div class="row">
-						<div class="col-md-12 column">
-							<h2>
-								Heading
-							</h2>
-							<p>
-								Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
-							</p>
-							<p>
-								 <a class="btn" href="#">View details »</a>
-							</p>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-md-12 column">
-							<h2>
-								Heading
-							</h2>
-							<p>
-								Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
-							</p>
-							<p>
-								 <a class="btn" href="#">View details »</a>
-							</p>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-md-12 column">
-							<h2>
-								Heading
-							</h2>
-							<p>
-								Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
-							</p>
-							<p>
-								 <a class="btn" href="#">View details »</a>
-							</p>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-md-12 column">
-							<h2>
-								Heading
-							</h2>
-							<p>
-								Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.
-							</p>
-							<p>
-								 <a class="btn" href="#">View details »</a>
-							</p>
-						</div>
-					</div>
-
-					<!-- 分页开始 -->
+					</#list>
+                    <!-- 分页开始 -->
 					<div class="row text-right">
 						<div class="col-md-11 column">
 							<ul class="pagination">

@@ -44,21 +44,12 @@ public class BaseDaoImpl<T> implements BaseDao<T> {
     @SuppressWarnings("unchecked")
     public BaseDaoImpl()
     {
-        Class obtainedClass=getClass();
-        Type genericSuperclass=null;
-        for(;;)
-        {
-            if(obtainedClass.getGenericSuperclass().equals(Object.class))
-                break;
-            genericSuperclass=obtainedClass.getGenericSuperclass();
-            if(genericSuperclass instanceof ParameterizedType)
-                break;
-            obtainedClass=obtainedClass.getSuperclass();
-        }
-
-        if(genericSuperclass!=null) {
-            ParameterizedType gen = (ParameterizedType) genericSuperclass;
-            clazz = ((Class) (Class) gen.getActualTypeArguments()[0]);
+        Class c = getClass();
+        Type type = c.getGenericSuperclass();
+        if (type instanceof ParameterizedType) {
+            Type[] parameterizedType = ((ParameterizedType) type)
+                    .getActualTypeArguments();
+            clazz = (Class<T>) parameterizedType[0];
         }
     }
 

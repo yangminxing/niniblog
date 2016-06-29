@@ -85,6 +85,7 @@ public class WebAppConfig extends WebMvcConfigurerAdapter
     public FreeMarkerConfigurer freemarkerConfig() {
         FreeMarkerConfigurer configurer = new FreeMarkerConfigurer();
         configurer.setTemplateLoaderPath("/WEB-INF/views/");
+        configurer.setDefaultEncoding("UTF-8");
         return configurer;
     }
 
@@ -92,9 +93,9 @@ public class WebAppConfig extends WebMvcConfigurerAdapter
     public ViewResolver setupViewResolver()
     {
         FreeMarkerViewResolver freemarkerResolver=new FreeMarkerViewResolver();
-        //freemarkerResolver.setPrefix("/WEB-INF/views/");
+        freemarkerResolver.setPrefix("");
         freemarkerResolver.setSuffix(".ftl");
-       // freemarkerResolver.setContentType("utf-8");
+        freemarkerResolver.setContentType("text/html;charset=UTF-8");
         freemarkerResolver.setViewClass(FreeMarkerView.class);
         return freemarkerResolver;
     }
