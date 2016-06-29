@@ -23,7 +23,7 @@ import java.util.Properties;
 
 /**
  * Created by Yang on 2016/5/12.
- * WebÅäÖÃÀà
+ * Webé…ç½®ç±»
  */
 @Configuration
 @ComponentScan("com.niniblog")
@@ -81,7 +81,12 @@ public class WebAppConfig extends WebMvcConfigurerAdapter
         return transactionManager;
     }
 
-
+    @Bean
+    public FreeMarkerConfigurer freemarkerConfig() {
+        FreeMarkerConfigurer configurer = new FreeMarkerConfigurer();
+        configurer.setTemplateLoaderPath("/WEB-INF/views/");
+        return configurer;
+    }
 
     @Bean
     public ViewResolver setupViewResolver()
@@ -93,16 +98,9 @@ public class WebAppConfig extends WebMvcConfigurerAdapter
         freemarkerResolver.setViewClass(FreeMarkerView.class);
         return freemarkerResolver;
     }
-
-    @Bean
-    public FreeMarkerConfigurer freemarkerConfig() {
-        FreeMarkerConfigurer configurer = new FreeMarkerConfigurer();
-        configurer.setTemplateLoaderPath("/WEB-INF/views/");
-        return configurer;
-    }
-
+    
     /**
-     * ÉèÖÃ¾²Ì¬×ÊÔ´·ÃÎÊ
+     * è®¾ç½®é™æ€èµ„æºè®¿é—®
      *
      */
     @Override

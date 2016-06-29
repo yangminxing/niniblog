@@ -36,6 +36,7 @@ public class LinkController {
     public ModelAndView list(HttpServletRequest request,HttpServletResponse response)
     {
         ModelAndView modelAndView=new ModelAndView("/index");
+
         List<BlogArticle> blogArticles=service.list(new BlogArticle(), new HttpContext(request, response));
         modelAndView.addObject("blogarticles",blogArticles);
         return modelAndView;
