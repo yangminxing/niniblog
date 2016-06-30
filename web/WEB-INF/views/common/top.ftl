@@ -1,4 +1,3 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!-- 导航开始 -->
 <div class="row ">
   <nav class="navbar navbar-default navbar-fixed-top" role="navigation">

@@ -7,6 +7,11 @@ import javax.servlet.http.HttpServletResponse;
  * 后端数据上下文
  */
 public class HttpContext {
+
+    public static final String PAGE_INDEX_NAME="pg_index";
+    public static final String PAGE_COUNT_NAME="pg_count";
+    public static final String PAGE_SIZE_NAME="pg_size";
+
     /**
      * 当前页序
      */
@@ -37,8 +42,8 @@ public class HttpContext {
     }
 
     public int getCurrentPageIndex() {
-        if(httpServletRequest!=null&&httpServletRequest.getParameter("pg_index")!=null)
-            return Integer.valueOf(httpServletRequest.getParameter("pg_index"));
+        if(httpServletRequest!=null&&httpServletRequest.getParameter(PAGE_INDEX_NAME)!=null)
+            return Integer.valueOf(httpServletRequest.getParameter(PAGE_INDEX_NAME));
         return currentPageIndex;
     }
 
@@ -47,8 +52,8 @@ public class HttpContext {
     }
 
     public int getPageCount() {
-        if(httpServletRequest!=null&&httpServletRequest.getParameter("pg_count")!=null)
-            return Integer.valueOf(httpServletRequest.getParameter("pg_count"));
+        if(httpServletRequest!=null&&httpServletRequest.getParameter(PAGE_COUNT_NAME)!=null)
+            return Integer.valueOf(httpServletRequest.getParameter(PAGE_COUNT_NAME));
         return pageCount;
     }
 
@@ -57,8 +62,8 @@ public class HttpContext {
     }
 
     public int getPageSize() {
-        if(httpServletRequest!=null&&httpServletRequest.getParameter("pg_size")!=null)
-            return Integer.valueOf(httpServletRequest.getParameter("pg_size"));
+        if(httpServletRequest!=null&&httpServletRequest.getParameter(PAGE_SIZE_NAME)!=null)
+            return Integer.valueOf(httpServletRequest.getParameter(PAGE_SIZE_NAME));
         return pageSize;
     }
 

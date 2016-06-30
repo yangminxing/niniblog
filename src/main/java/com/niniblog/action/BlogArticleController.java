@@ -2,8 +2,6 @@ package com.niniblog.action;
 
 import com.niniblog.bean.BlogArticle;
 import com.niniblog.service.BlogArticleService;
-import com.niniblog.util.HttpContext;
-import jdk.nashorn.internal.ir.LiteralNode;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -48,8 +46,9 @@ public class BlogArticleController {
     @RequestMapping(value="/blogarticle/load/{id}",method= RequestMethod.GET)
     public ModelAndView load(@PathVariable Integer id)
     {
-        ModelAndView mav=new ModelAndView("/blogarticle/load_blogarticle");
-        BlogArticle blogArticle=service.get(id);
+        ModelAndView mav=new ModelAndView("/blogarticle/edit_blogarticle");
+        BlogArticle blogArticle=new BlogArticle();
+        blogArticle.setTitle("cao");
         mav.addObject("blogarticle",blogArticle);
         return mav;
     }

@@ -193,7 +193,7 @@
 	<div class="col-xs-10 nb_right">
 			<!-- 导航开始 -->
 			<#--<%@ include file="common/top.jsp"%>-->
-			<#include "common/top.ftl">
+			<#include "common/top.ftl" />
 			<!-- 导航结束 -->
 			<!-- 内容主体开始 -->
 			<div class="row nb_content " >
@@ -212,51 +212,14 @@
 							</label>
 						</div>
 					</div>
-					<!-- 正文 -->
-					<#list blogarticles as blogarticle>
-					<div class="row">
-						<div class="col-md-12 column">
-							<h2>
-								${blogarticle.title}
-							</h2>
-							<p>
-								${blogarticle.content}
-							</p>
-							<p>
-								 <a class="btn" href="#">View details »</a>
-							</p>
-						</div>
+
+					<input type="button" class="btnTest" value="test" />
+					<div class="pikaqiu">
+
 					</div>
-					</#list>
-                    <!-- 分页开始 -->
-					<div class="row text-right">
-						<div class="col-md-11 column">
-							<ul class="pagination">
-								<li>
-									 <a href="#">Prev</a>
-								</li>
-								<li>
-									 <a href="#">1</a>
-								</li>
-								<li>
-									 <a href="#">2</a>
-								</li>
-								<li>
-									 <a href="#">3</a>
-								</li>
-								<li>
-									 <a href="#">4</a>
-								</li>
-								<li>
-									 <a href="#">5</a>
-								</li>
-								<li>
-									 <a href="#">Next</a>
-								</li>
-							</ul>
-						</div>
-					</div>
-					<!-- 分页结束 -->
+					<!-- 正文开始 -->
+					<#--<#include "blogarticle/list_blogarticle.ftl" />-->
+					<!-- 正文结束 -->
 				</div>
 			</div>
 			<!-- 内容主体结束 -->
@@ -371,5 +334,6 @@
 	<script src="js/plugins/bootstrap.min.js"></script>
 	<script src="js/connect/ajax.js"></script>
 	<script src="js/login/login.js" type="text/javascript"></script>
+	<script src="js/blogarticle/blogarticle.js" type="text/javascript"></script>
 </body>
 </html>
