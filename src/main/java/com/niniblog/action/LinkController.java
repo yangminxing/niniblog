@@ -20,26 +20,18 @@ public class LinkController {
 
     @Autowired
     private BlogArticleService service;
-//    /**
-//     * 首页
-//     */
-//    @RequestMapping(value="/")
-//    public ModelAndView mainPage()
-//    {
-//        return new ModelAndView("home");
-//    }
 
     /**
-     * 首页 显示最新某个人写的blog
+     * 首页
      */
-    @RequestMapping(value =  {"/index","/blogarticle/list"})
+    @RequestMapping(value =  {"/index"})
     public ModelAndView list(HttpServletRequest request,HttpServletResponse response)
     {
         ModelAndView modelAndView=new ModelAndView("/index");
-
-        List<BlogArticle> blogArticles=service.list(new BlogArticle(), new HttpContext(request, response));
+        List<BlogArticle> blogArticles=service.list(new BlogArticle(), 0 , 10);
         modelAndView.addObject("blogarticles",blogArticles);
         return modelAndView;
     }
+
 }
 

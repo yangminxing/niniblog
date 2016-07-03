@@ -10,5 +10,5 @@ import java.util.List;
  */
 public interface BlogArticleService extends BaseService<BlogArticle>
 {
-    public List<BlogArticle> list(BlogArticle blogArticle,HttpContext context);
+    public List<BlogArticle> list(BlogArticle blogArticle, int currentPageIndex, int currentPageSize);
 }

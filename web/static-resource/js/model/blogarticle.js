@@ -21,4 +21,33 @@ jQuery(document).ready(function() {
         });
     });
 
+    //设置默认读取页面
+    defaultPage();
 });
+
+function defaultPage()
+{
+    listBlogarticlePage();
+}
+
+function listBlogarticlePage(pg_index, pg_count,pg_size, fl_keywords)
+{
+    mainContent.setPageUrl("/blogarticle/list", "pg_index="+pg_index+"&pg_count="+pg_count+"&pg_size="+pg_size+"&fl_keywords="+fl_keywords,
+        function(data){
+            mainContent.setHtml(data);
+        },
+        function(error){
+            mainContent.setHtml(error);
+        });
+}
+
+function editBlogarticlePage()
+{
+
+}
+
+function loadBlogarticlePage()
+{
+
+}
+

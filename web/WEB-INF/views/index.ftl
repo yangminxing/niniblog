@@ -5,8 +5,8 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Bootstrap 101 Template</title>
-	<link href="css/bootstrap.min.css" rel="stylesheet">
-	<link href="css/font-awesome.css" rel="stylesheet">
+	<link href="/css/bootstrap.min.css" rel="stylesheet">
+	<link href="/css/font-awesome.css" rel="stylesheet">
 
 	<style>
 		/* springmvc theme source 改 */
@@ -79,7 +79,7 @@
 			height: 100%;
 
 			z-index: 1000;
-			background-image: url("images/star.jpg");
+			background-image: url("/images/star.jpg");
 		}
 
 
@@ -213,14 +213,11 @@
 						</div>
 					</div>
 
-					<input type="button" class="btnTest" value="test" />
-					<div class="pikaqiu">
-
-					</div>
+					<div class="maincontent" id="mainContent">
 					<!-- 正文开始 -->
 					<#--<#include "blogarticle/list_blogarticle.ftl" />-->
 					<!-- 正文结束 -->
-				</div>
+					</div>
 			</div>
 			<!-- 内容主体结束 -->
     </div>
@@ -330,10 +327,11 @@
 		</div><!-- /.modal-dialog -->
 	</div><!-- /.modal -->
 	<!-- 注册窗体 结束 -->
-	<script src="js/plugins/jquery.min.js"></script>
-	<script src="js/plugins/bootstrap.min.js"></script>
-	<script src="js/connect/ajax.js"></script>
-	<script src="js/login/login.js" type="text/javascript"></script>
-	<script src="js/blogarticle/blogarticle.js" type="text/javascript"></script>
+	<script src="/js/plugins/jquery.min.js" type="text/javascript"></script>
+	<script src="/js/plugins/bootstrap.min.js" type="text/javascript"></script>
+	<script src="/js/common/operation.js" type="text/javascript"></script>
+    <script src="/js/common/base.js" type="text/javascript"></script>
+	<script src="/js/login/login.js" type="text/javascript"></script>
+	<script src="/js/model/blogarticle.js" type="text/javascript"></script>
 </body>
 </html>

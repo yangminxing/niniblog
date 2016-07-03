@@ -1,19 +1,21 @@
 <!-- 正文开始 -->
-<#list blogarticles as blogarticle>
-<div class="row">
-    <div class="col-md-12 column">
-        <h2>
-        ${blogarticle.title}
-        </h2>
-        <p>
-        ${blogarticle.content}
-        </p>
-        <p>
-            <a class="btn" href="#">View details »</a>
-        </p>
+<#if blogarticles??>
+    <#list blogarticles as blogarticle>
+    <div class="row">
+        <div class="col-md-12 column">
+            <h2>
+            ${blogarticle.title}
+            </h2>
+            <p>
+            ${blogarticle.content}
+            </p>
+            <p>
+                <a class="btn" href="#">View details »</a>
+            </p>
+        </div>
     </div>
-</div>
-</#list>
+    </#list>
+</#if>
 <!-- 正文结束 -->
 
 <!-- 分页开始 -->

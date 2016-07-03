@@ -76,6 +76,13 @@
             <version>${hibernate.version}</version>
         </dependency>
 
+        <!--&lt;!&ndash; Hibernate validator &ndash;&gt;-->
+        <!--<dependency>-->
+            <!--<groupId>org.hibernate</groupId>-->
+            <!--<artifactId>hibernate-validator</artifactId>-->
+            <!--<version>4.2.0.Final</version>-->
+        <!--</dependency>-->
+
         <!-- JPA -->
         <dependency>
             <groupId>javax.persistence</groupId>

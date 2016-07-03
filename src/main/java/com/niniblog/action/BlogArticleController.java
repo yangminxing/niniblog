@@ -2,17 +2,17 @@ package com.niniblog.action;
 
 import com.niniblog.bean.BlogArticle;
 import com.niniblog.service.BlogArticleService;
+import com.niniblog.util.HttpContext;
+import com.niniblog.validator.PageParameterValidtor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.WebDataBinder;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -51,6 +51,25 @@ public class BlogArticleController {
         blogArticle.setTitle("cao");
         mav.addObject("blogarticle",blogArticle);
         return mav;
+    }
+
+    /**
+     * 首页 列表
+     */
+    @RequestMapping(value = "/blogarticle/list")
+    public ModelAndView list(HttpServletRequest request,HttpServletResponse response)
+    {
+        ModelAndView modelAndView=new ModelAndView("/blogarticle/list_blogarticle");
+
+        int currentPageIndex = HttpContext.getCurrentPageIndex(request);
+        int currentPageSize = HttpContext.getPageSize(request);
+        if(currentPageIndex == -1||currentPageSize == -1)
+        {
+            return modelAndView;
+        }
+        List<BlogArticle> blogArticles=service.list(new BlogArticle(), currentPageIndex , currentPageSize);
+        modelAndView.addObject("blogarticles",blogArticles);
+        return modelAndView;
     }
 
 //    /**

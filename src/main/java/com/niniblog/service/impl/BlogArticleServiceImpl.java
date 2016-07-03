@@ -23,8 +23,8 @@ public class  BlogArticleServiceImpl extends BaseServiceImpl<BlogArticle> implem
     /**
      * 显示文章
      */
-    public List<BlogArticle> list(BlogArticle blogArticle,HttpContext context)
+    public List<BlogArticle> list(BlogArticle blogArticle, int currentPageIndex, int currentPageSize)
     {
-        return blogArticleDao.findByExample(blogArticle,context.getCurrentPageIndex(),context.getPageSize());
+        return blogArticleDao.findByExample(blogArticle, currentPageIndex, currentPageSize);
     }
 }

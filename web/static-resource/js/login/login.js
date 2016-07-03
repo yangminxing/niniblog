@@ -48,3 +48,22 @@ jQuery(document).ready(function() {
 });
 
 
+jQuery(document).ready(function() {
+
+
+});
+
+function login()
+{
+	//success
+
+	//failed
+}
+
+function register()
+{
+	//success
+
+	//failed
+}
+
