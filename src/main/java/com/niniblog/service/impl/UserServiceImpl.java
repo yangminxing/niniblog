@@ -4,6 +4,7 @@ import com.niniblog.bean.User;
 import com.niniblog.bean.UserLoginBlack;
 import com.niniblog.dao.UserDao;
 import com.niniblog.dao.UserLoginBlackDao;
+import com.niniblog.result.DaoListResult;
 import com.niniblog.service.UserService;
 import com.niniblog.util.HttpContext;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,11 +32,11 @@ public class UserServiceImpl extends BaseServiceImpl<User> implements UserServic
      */
     public User find(User user)
     {
-        List<User> list=userDao.findByExample(user);
-        if(list==null||list.size()==0)
+        DaoListResult<User> daolist=userDao.findByExample(user);
+        if(daolist==null||daolist.getDaoList().size()==0)
             return null;
 
-        return list.get(0);
+        return daolist.getDaoList().get(0);
     }
 
     /**

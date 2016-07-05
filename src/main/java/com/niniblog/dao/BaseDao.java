@@ -1,5 +1,7 @@
 package com.niniblog.dao;
 
+import com.niniblog.result.DaoListResult;
+
 import java.util.List;
 
 /**
@@ -35,7 +37,7 @@ public interface BaseDao<T> {
     /**
      * 获取符合条件的集合
      */
-    public List<T> findByExample(T example);
+    public DaoListResult<T> findByExample(T example);
 
     /**
      * 获取符合条件的第一个数据
@@ -48,5 +50,5 @@ public interface BaseDao<T> {
      * @param pageIndex 起始页序
      * @param pageSize 每页显示
      */
-    public List<T> findByExample(T example,int pageIndex,int pageSize);
+    public DaoListResult<T> findByExample(T example,int pageIndex,int pageSize);
 }

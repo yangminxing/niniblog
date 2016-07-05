@@ -1,6 +1,7 @@
 package com.niniblog.service.impl;
 
 import com.niniblog.dao.BaseDao;
+import com.niniblog.result.DaoListResult;
 import com.niniblog.service.BaseService;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,12 +35,12 @@ public class BaseServiceImpl<T> implements BaseService<T>
     }
 
     @Override
-    public List<T> findByExample(T example) {
+    public DaoListResult<T> findByExample(T example) {
         return dao.findByExample(example);
     }
 
     @Override
-    public List<T> findByExample(T example,int index,int size)
+    public DaoListResult<T> findByExample(T example,int index,int size)
     {
         return dao.findByExample(example,index,size);
     }

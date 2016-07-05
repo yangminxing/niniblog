@@ -1,6 +1,7 @@
 package com.niniblog.service;
 
 import com.niniblog.bean.BlogArticle;
+import com.niniblog.result.DaoListResult;
 import com.niniblog.util.HttpContext;
 
 import java.util.List;
@@ -10,5 +11,5 @@ import java.util.List;
  */
 public interface BlogArticleService extends BaseService<BlogArticle>
 {
-    public List<BlogArticle> list(BlogArticle blogArticle, int currentPageIndex, int currentPageSize);
+    public DaoListResult<BlogArticle> list(BlogArticle blogArticle, int currentPageIndex, int currentPageSize);
 }

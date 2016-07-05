@@ -1,6 +1,7 @@
 package com.niniblog.service.impl;
 
 import com.niniblog.bean.BlogArticle;
+import com.niniblog.result.DaoListResult;
 import com.niniblog.util.HttpContext;
 import com.niniblog.dao.BlogArticleDao;
 import com.niniblog.service.BlogArticleService;
@@ -23,7 +24,7 @@ public class  BlogArticleServiceImpl extends BaseServiceImpl<BlogArticle> implem
     /**
      * 显示文章
      */
-    public List<BlogArticle> list(BlogArticle blogArticle, int currentPageIndex, int currentPageSize)
+    public DaoListResult<BlogArticle> list(BlogArticle blogArticle, int currentPageIndex, int currentPageSize)
     {
         return blogArticleDao.findByExample(blogArticle, currentPageIndex, currentPageSize);
     }

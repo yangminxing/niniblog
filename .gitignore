@@ -58,3 +58,4 @@ target/classes/com/niniblog/dao/BlogArticleDao.class
 *.class
 target/classes/com/niniblog/dao/impl/BaseDaoImpl.class
 *.class
+*.class

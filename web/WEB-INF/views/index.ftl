@@ -8,6 +8,8 @@
 	<link href="/css/bootstrap.min.css" rel="stylesheet">
 	<link href="/css/font-awesome.css" rel="stylesheet">
 
+	<link href="/css/pagination.css" rel="stylesheet">
+
 	<style>
 		/* springmvc theme source 改 */
 		/* 自适应屏幕 大于1000px时 */
@@ -329,7 +331,7 @@
 	<!-- 注册窗体 结束 -->
 	<script src="/js/plugins/jquery.min.js" type="text/javascript"></script>
 	<script src="/js/plugins/bootstrap.min.js" type="text/javascript"></script>
-	<script src="/js/common/operation.js" type="text/javascript"></script>
+	<script src="/js/common/maincontent.js" type="text/javascript"></script>
     <script src="/js/common/base.js" type="text/javascript"></script>
 	<script src="/js/login/login.js" type="text/javascript"></script>
 	<script src="/js/model/blogarticle.js" type="text/javascript"></script>
