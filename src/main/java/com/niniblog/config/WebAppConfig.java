@@ -31,6 +31,7 @@ import java.util.Properties;
 @EnableTransactionManagement
 @EnableAspectJAutoProxy
 @PropertySource("classpath:application.properties")
+@ImportResource("classpath:messageconvert.xml")
 public class WebAppConfig extends WebMvcConfigurerAdapter
 {
     private static final String PROPERTY_NAME_DATABASE_DRIVE="db.driver";
@@ -97,6 +98,7 @@ public class WebAppConfig extends WebMvcConfigurerAdapter
         freemarkerResolver.setSuffix(".ftl");
         freemarkerResolver.setContentType("text/html;charset=UTF-8");
         freemarkerResolver.setViewClass(FreeMarkerView.class);
+
         return freemarkerResolver;
     }
     
