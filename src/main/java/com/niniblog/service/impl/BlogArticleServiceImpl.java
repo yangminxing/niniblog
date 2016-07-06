@@ -2,7 +2,6 @@ package com.niniblog.service.impl;
 
 import com.niniblog.bean.BlogArticle;
 import com.niniblog.result.DaoListResult;
-import com.niniblog.util.HttpContext;
 import com.niniblog.dao.BlogArticleDao;
 import com.niniblog.service.BlogArticleService;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,10 +1,11 @@
 package com.niniblog.action;
 
+import com.google.gson.Gson;
 import com.niniblog.bean.BlogArticle;
 import com.niniblog.result.DaoListResult;
 import com.niniblog.result.FrontEndListResult;
 import com.niniblog.service.BlogArticleService;
-import com.niniblog.util.HttpContext;
+import com.niniblog.validator.Validator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mock.web.MockHttpServletResponse;
 import org.springframework.stereotype.Controller;
@@ -13,10 +14,10 @@ import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.View;
 import org.springframework.web.servlet.ViewResolver;
 
+import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 
@@ -31,6 +32,9 @@ public class BlogArticleController {
 
     @Autowired
     private ViewResolver viewResolver;
+
+    @Resource(name = "pageParameterValidator")
+    private Validator pageValidator;
 
     @RequestMapping(value = "/blogarticle/add")
     public ModelAndView add() {
@@ -64,35 +68,37 @@ public class BlogArticleController {
     @RequestMapping(value = "/blogarticle/list", produces = "application/json;charset=utf-8")
     public
     @ResponseBody
-    FrontEndListResult list(HttpServletRequest request, HttpServletResponse response) {
-        FrontEndListResult listResult = new FrontEndListResult();
-        try {
-            int currentPageIndex = HttpContext.getCurrentPageIndex(request);
-            int currentPageSize = HttpContext.getPageSize(request);
-            if (currentPageIndex == -1 || currentPageSize == -1) {
-                listResult.setErrorMsg("BlogArticleController list method failed. The request parameters are not correct.");
-                return listResult;
-            }
-            DaoListResult<BlogArticle> blogArticles = service.list(new BlogArticle(), currentPageIndex, currentPageSize);
+    FrontEndListResult list(HttpServletRequest request, HttpServletResponse response, String pgIndex, String pgSize) {
 
-            //渲染页面
-            Map<String, Object> modelMap = new HashMap<String, Object>();
-            modelMap.put("blogarticles", blogArticles.getDaoList());
-            modelMap.put("blogarticle", currentPageIndex);
-            modelMap.put("pg_count", blogArticles.getRowCount());
-            modelMap.put("pg_size", currentPageSize);
-            modelMap.put("fk_keywords", request.getParameter("fk_keywords"));
+        FrontEndListResult<BlogArticle> listResult = new FrontEndListResult();
+        BlogArticle blogArticle=new Gson().fromJson(request.getParameter("blogArticle"), BlogArticle.class);
+        if (!pageValidator.valid(request) || blogArticle == null) {
+            listResult.setErrorMsg("BlogArticleController list method failed. The request parameters are not correct.");
+            return listResult;
+        }
+
+        int currentPgIndex = Integer.parseInt(pgIndex);
+        int currentPgSize = Integer.parseInt(pgSize);
+
+        DaoListResult<BlogArticle> blogArticles = service.list(blogArticle, currentPgIndex, currentPgSize);
+        //渲染页面
+        Map<String, Object> modelMap = new HashMap<String, Object>();
+        modelMap.put("blogarticles", blogArticles.getDaoList());
+        modelMap.put("pgCount", blogArticles.getRowCount());
+        modelMap.put("pgIndex", currentPgIndex);
+        modelMap.put("pgSize", currentPgSize);
+
+        try {
             View view = this.viewResolver.resolveViewName("/blogarticle/list_blogarticle", Locale.CHINA);
             MockHttpServletResponse mockHttpServletResponse = new MockHttpServletResponse();
             view.render(modelMap, request, mockHttpServletResponse);
 
             //设置回馈
             listResult.setHtml(mockHttpServletResponse.getContentAsString());
-            listResult.setPgIndex(currentPageIndex);
+            listResult.setPgIndex(currentPgIndex);
             listResult.setPgCount(blogArticles.getRowCount());
-            listResult.setPgSize(currentPageSize);
-            listResult.setFkKeywords("");
-
+            listResult.setPgSize(currentPgSize);
+            listResult.setT(blogArticle);
         } catch (Exception e) {
 
         }

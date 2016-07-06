@@ -19,7 +19,7 @@
 <!-- 正文结束 -->
 
 
-<#macro pg blogarticle>
+<#macro pg blogarticle pg_index >
 <div class="row text-right">
     <div class="col-md-11 column">
         <ul class="pagination">

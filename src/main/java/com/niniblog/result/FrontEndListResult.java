@@ -3,7 +3,7 @@ package com.niniblog.result;
 /**
  * 返回前端的综合合集对象
  */
-public class FrontEndListResult {
+public class FrontEndListResult<T> {
 
     /**
      * 页号
@@ -21,9 +21,9 @@ public class FrontEndListResult {
     private int pgSize;
 
     /**
-     * 过滤关键字
+     * 过滤实体类
      */
-    private String fkKeywords;
+    private T t;
 
     /**
      * 相应正文
@@ -40,11 +40,11 @@ public class FrontEndListResult {
 
     }
 
-    public FrontEndListResult(int pgIndex, int pgCount, int pgSize, String fkKeywords, String html) {
+    public FrontEndListResult(T t, int pgIndex, int pgCount, int pgSize, String html) {
+        this.t=t;
         this.pgIndex = pgIndex;
         this.pgCount = pgCount;
         this.pgSize = pgSize;
-        this.fkKeywords = fkKeywords;
         this.html = html;
     }
 
@@ -72,12 +72,12 @@ public class FrontEndListResult {
         this.pgSize = pgSize;
     }
 
-    public String getFkKeywords() {
-        return fkKeywords;
+    public T getT() {
+        return t;
     }
 
-    public void setFkKeywords(String fkKeywords) {
-        this.fkKeywords = fkKeywords;
+    public void setT(T t) {
+        this.t = t;
     }
 
     public String getHtml() {

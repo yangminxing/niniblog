@@ -6,7 +6,6 @@ import com.niniblog.dao.UserDao;
 import com.niniblog.dao.UserLoginBlackDao;
 import com.niniblog.result.DaoListResult;
 import com.niniblog.service.UserService;
-import com.niniblog.util.HttpContext;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

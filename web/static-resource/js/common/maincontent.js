@@ -13,11 +13,9 @@ MainContent.prototype.setPageUrl=function(url, data, successFn, errorFn){
     this.currentCommmand=url;
 
     $.ajax({
-        catch:false,
-        type:"GET",
+        type:"POST",
         url:url,
         data:data,
-        async:false,
         success:successFn,
         error:errorFn
     });

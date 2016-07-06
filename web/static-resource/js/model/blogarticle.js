@@ -2,13 +2,16 @@
  * 博客文章列表前端实体对象
  * @constructor
  */
-function BlogArticle() {}
+function BlogArticleList() {}
+function BlogArticle(){}
 
-BlogArticle.prototype.current_pg_index=0;
-BlogArticle.prototype.current_pg_count=0;
-BlogArticle.prototype.current_pg_size=5;
-BlogArticle.prototype.current_fl_keywords="";
+BlogArticleList.prototype.currentPgIndex=0;
+BlogArticleList.prototype.currentPgCount=0;
+BlogArticleList.prototype.currentPgSize=5;
+BlogArticleList.prototype.currentBlogArticle=null;
+BlogArticle.prototype.title=null;
 
+var blogArticleList;
 var blogArticle;
 jQuery(document).ready(function() {
 
@@ -33,10 +36,12 @@ jQuery(document).ready(function() {
     });
 
     //实例初始化
+    blogArticleList=new BlogArticleList();
     blogArticle=new BlogArticle();
+    blogArticleList.currentBlogArticle=blogArticle;
 
     //设置默认读取页面
-    defaultPage(blogArticle);
+    defaultPage(blogArticleList);
 });
 
 
@@ -44,34 +49,37 @@ jQuery(document).ready(function() {
  * 加载默认页面
  * @param blogArticle
  */
-function defaultPage(blogArticle)
+function defaultPage(blogArticleList)
 {
-    listBlogarticlePage(blogArticle);
+    listBlogarticlePage(blogArticleList.currentBlogArticle, blogArticleList.currentPgIndex,
+    blogArticleList.currentPgCount, blogArticleList.currentPgSize);
 }
 
 
-
+//工作路径
+//http://www.mkyong.com/spring-mvc/spring-4-mvc-ajax-hello-world-example/
+//然后把传到 后台 后台传给freemarker 的各种参数都变成实体类
 
 /**
  * 产生Blog文章列表
+ * @param blogA
  * @param pg_index 当前页号
  * @param pg_count 总页数
  * @param pg_size  每页显示多少个
- * @param fl_keywords 过滤关键词
  */
-function listBlogarticlePage(blogArticle)
+function listBlogarticlePage(blogArticle, pgIndex, pgCount, pgSize)
 {
+    blogArticle.title="";
     mainContent.setPageUrl("/blogarticle/list",
-        "pg_index="+blogArticle.current_pg_index+
-        "&pg_count="+blogArticle.current_pg_count+
-        "&pg_size="+blogArticle.current_pg_size+"" +
-        "&fl_keywords="+blogArticle.current_fl_keywords,
+        "blogArticle="+ JSON.stringify(blogArticle)+
+        "&pgIndex="+pgIndex+
+        "&pgSize="+pgSize,
         function(data){
             mainContent.setHtml(data.html);
-            blogArticle.current_pg_index=data.pgIndex;
-            blogArticle.current_pg_count=data.pgCount;
-            blogArticle.current_pg_size=data.pgSize;
-            blogArticle.current_fl_keywords=data.flKeywords;
+            blogArticleList.currentPgIndex=data.pgIndex;
+            blogArticleList.currentPgCount=data.pgCount;
+            blogArticleList.currentPgSize=data.pgSize;
+            blogArticleList.currentBlogArticle=data.t;
         },
         function(error){
             mainContent.setHtml(error);

@@ -59,3 +59,5 @@ target/classes/com/niniblog/dao/BlogArticleDao.class
 target/classes/com/niniblog/dao/impl/BaseDaoImpl.class
 *.class
 *.class
+*.class
+target/classes/com/niniblog/result/FrontEndResult.class

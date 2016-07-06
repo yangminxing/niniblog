@@ -11,13 +11,12 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class TestFreeMarker {
     @RequestMapping("/testfree")
-    public ModelAndView home()
-    {
-        ModelAndView modelAndView=new ModelAndView("/testfree");
-        User user=new User();
+    public ModelAndView home() {
+        ModelAndView modelAndView = new ModelAndView("/testfree");
+        User user = new User();
         user.setId(2);
         user.setUsername("yang");
-        modelAndView.addObject("user",user);
+        modelAndView.addObject("user", user);
         return modelAndView;
     }
 }
