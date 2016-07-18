@@ -51,7 +51,7 @@ jQuery(document).ready(function() {
  */
 function defaultPage(blogArticleList)
 {
-    listBlogarticlePage(blogArticleList.currentBlogArticle, blogArticleList.currentPgIndex,
+    listBlogarticlePage(blogArticleList.currentPgIndex,
     blogArticleList.currentPgCount, blogArticleList.currentPgSize);
 }
 
@@ -67,9 +67,8 @@ function defaultPage(blogArticleList)
  * @param pg_count 总页数
  * @param pg_size  每页显示多少个
  */
-function listBlogarticlePage(blogArticle, pgIndex, pgCount, pgSize)
+function listBlogarticlePage(pgIndex, pgCount, pgSize)
 {
-    blogArticle.title="";
     mainContent.setPageUrl("/blogarticle/list",
         "blogArticle="+ JSON.stringify(blogArticle)+
         "&pgIndex="+pgIndex+
@@ -79,7 +78,6 @@ function listBlogarticlePage(blogArticle, pgIndex, pgCount, pgSize)
             blogArticleList.currentPgIndex=data.pgIndex;
             blogArticleList.currentPgCount=data.pgCount;
             blogArticleList.currentPgSize=data.pgSize;
-            blogArticleList.currentBlogArticle=data.t;
         },
         function(error){
             mainContent.setHtml(error);

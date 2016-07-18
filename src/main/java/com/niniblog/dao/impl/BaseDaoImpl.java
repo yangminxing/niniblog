@@ -117,7 +117,13 @@ public class BaseDaoImpl<T> implements BaseDao<T> {
         int rowCount;
         try {
             Criteria e = this.getCurrentSession().createCriteria(this.clazz);
-            e.add(Example.create(example)).setFirstResult(pageIndex).setMaxResults(pageSize);
+
+            e.add(Example.create(example));
+
+            e.setProjection(null);
+
+            e.setFirstResult(0);
+            e.setMaxResults(pageSize);
             //添加业务List
             entities.addAll(e.list());
             //读取行数

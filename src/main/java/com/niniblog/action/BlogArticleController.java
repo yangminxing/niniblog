@@ -68,10 +68,10 @@ public class BlogArticleController {
     @RequestMapping(value = "/blogarticle/list", produces = "application/json;charset=utf-8")
     public
     @ResponseBody
-    FrontEndListResult list(HttpServletRequest request, HttpServletResponse response, String pgIndex, String pgSize, @RequestBody BlogArticle blogArticle) {
+    FrontEndListResult list(HttpServletRequest request, HttpServletResponse response, String pgIndex, String pgSize) {
 
         FrontEndListResult<BlogArticle> listResult = new FrontEndListResult();
-        BlogArticle blogArticle1=new Gson().fromJson(request.getParameter("blogArticle"), BlogArticle.class);
+        BlogArticle blogArticle=new Gson().fromJson(request.getParameter("blogArticle"), BlogArticle.class);
         if (!pageValidator.valid(request) || blogArticle == null) {
             listResult.setErrorMsg("BlogArticleController list method failed. The request parameters are not correct.");
             return listResult;
@@ -98,9 +98,8 @@ public class BlogArticleController {
             listResult.setPgIndex(currentPgIndex);
             listResult.setPgCount(blogArticles.getRowCount());
             listResult.setPgSize(currentPgSize);
-            listResult.setT(blogArticle);
         } catch (Exception e) {
-
+            System.out.println(e);
         }
         return listResult;
     }

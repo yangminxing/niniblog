@@ -19,21 +19,21 @@
 <!-- 正文结束 -->
 
 
-<#macro pg blogarticle pg_index >
+<#macro pg blogarticle pgIndex pgCount pgSize >
 <div class="row text-right">
     <div class="col-md-11 column">
         <ul class="pagination">
             <#assign nba=blogarticle>
-            <#assign pi=blogarticle.pgIndex?number>
+            <#assign pi=pgIndex?number>
             <#if pi gt 1>
 
-                <a href="javascript:listBlogarticlePage('${nba}');">Prev</a>
+                <a href="javascript:prevListBlogarticlePage('${pgIndex}','${pgCount}','${pgSize}');">Prev</a>
             <#else>
                 <a href="javascript:void(0);">Prev</a>
             </#if>
 
-            <#if pi lt pg_size>
-                <a href="javascript:listBlogarticlePage('${nba}');">Next</a>
+            <#if pi lt pgSize>
+                <a href="javascript:nextListBlogarticlePage('${pgIndex}','${pgCount}','${pgSize}');">Next</a>
             <#else>
                 <a href="javascript:void(0);">Next</a>
             </#if>
@@ -42,7 +42,7 @@
 </div>
 </#macro>
 
-<@pg blogarticle=blogarticle />
+<@pg blogarticle=blogarticle pgIndex=pgIndex pgCount=pgCount pgSize=pgSize />
 
 <#--<!-- 分页开始 &ndash;&gt;-->
 <#--<div class="row text-right">-->
